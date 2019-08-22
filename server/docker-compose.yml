@@ -1,0 +1,27 @@
+version: "3"
+services:
+  mongodb_development:
+    container_name: mongodb_development
+    image: mongo
+    volumes:
+      - ./data_development:/data/db
+    ports:
+      - "27017:27017"
+  quebus-development:
+    container_name: quebus-development
+    restart: always
+    build: .
+    env_file:
+      - ./environments/development.env
+    image: aguirresabino/quebus-development
+    volumes:
+      - .:/usr/src/quebus
+      - /usr/src/quebus/node_modules
+    ports:
+      - "3000:3000"
+    links:
+      - mongodb_development
+    command: ./wait-for-it.sh mongodb_development:27017 --timeout=2 --strict -- ./node_modules/nodemon/bin/nodemon.js server.js
+    depends_on:
+      - mongodb_development
+    tty: true

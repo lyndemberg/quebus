@@ -1,0 +1,9 @@
+node_modules/
+development/
+data_development/
+data_test/
+data/
+*.log
+.vscode/
+production.env
+.DS_Store
