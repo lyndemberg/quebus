@@ -8,3 +8,5 @@ data/
 production.env
 .DS_Store
 .scannerwork/
+package-lock.json
+
