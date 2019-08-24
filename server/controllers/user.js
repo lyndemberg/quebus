@@ -11,14 +11,14 @@ module.exports = (api) => {
       }
     },
 
-    findAll: (req, res) => {
-      const data = userService.findAll();
+    findAll: async (req, res) => {
+      const data = await userService.findAll();
       res.status(200).json({ message: 'OK', status: 200, data });
     },
 
-    findById: (req, res) => {
+    findById: async (req, res) => {
       try {
-        const data = userService.findById(req.params.id);
+        const data = await userService.findById(req.params.id);
         res.status(200).json({ message: 'OK', status: 200, data });
       } catch (error) {
         res.status(404).json({ message: error.message, status: 404, data: {} });
