@@ -6,5 +6,11 @@ const api = express();
 consign()
   .include('middlewares')
   .then('config/db/mongoConnection.js')
+  .then('bin')
+  .then('models')
+  .then('repositories')
+  .then('services')
+  .then('controllers')
+  .then('routes')
   .then('config/boot.js')
   .into(api);

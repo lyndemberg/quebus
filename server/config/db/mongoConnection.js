@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const OPTIONS_MONGODB = require('./optionsMongoDB');
+
 const { MONGODB_URL, NODE_ENV } = process.env;
 
 let singleConnection;
@@ -15,7 +16,7 @@ module.exports = () => {
   });
 
   mongoose.connection.on('error', (err) => {
-    console.log('Erro na conexão: ' + err);
+    console.log(`Erro na conexão: ${err}`);
   });
 
   mongoose.connection.on('disconnect', () => {
@@ -23,4 +24,4 @@ module.exports = () => {
   });
 
   return singleConnection;
-}
+};
