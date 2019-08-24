@@ -7,3 +7,4 @@ data/
 .vscode/
 production.env
 .DS_Store
+.scannerwork/
