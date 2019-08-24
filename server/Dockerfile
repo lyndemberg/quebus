@@ -1,4 +1,4 @@
-FROM node:10.15.3-alpine
+FROM node:10.16.3-alpine
 
 ENV HOME_APP  /usr/src/quebus
 
@@ -6,9 +6,10 @@ RUN apk add --no-cache bash
 
 WORKDIR $HOME_APP
 
-COPY package*.json ./
+COPY package.json ./
+COPY yarn.lock ./
 
-RUN npm install --silent --progress=false
+RUN yarn install --audit
 
 COPY . .
 

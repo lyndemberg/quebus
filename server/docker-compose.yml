@@ -21,7 +21,7 @@ services:
       - "3000:3000"
     links:
       - mongodb_development
-    command: ./wait-for-it.sh mongodb_development:27017 --timeout=2 --strict -- ./node_modules/nodemon/bin/nodemon.js server.js
+    command: ./wait-for-it.sh mongodb_development:27017 --timeout=2 --strict -- npm run start:dev
     depends_on:
       - mongodb_development
     tty: true
