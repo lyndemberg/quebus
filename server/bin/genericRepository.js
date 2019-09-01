@@ -1,12 +1,12 @@
 module.exports = () => {
   const GenericRepository = (model) => {
-    const Model = model;
+    const Entity = model;
 
     const repository = {
 
       save: async (data) => {
         try {
-          const entity = new Model(data);
+          const entity = new Entity(data);
           return await entity.save();
         } catch (error) {
           console.log(error);
@@ -14,22 +14,22 @@ module.exports = () => {
         }
       },
 
-      findAll: async () => Model.find(),
+      findAll: async () => Entity.find(),
 
       findById: async (id) => {
         try {
-          return await Model.findById(id);
+          return await Entity.findById(id);
         } catch (error) {
           console.log(error);
-          throw new Error(`${Model.model.modelName} not found`);
+          throw new Error(`${Entity.model.modelName} not found`);
         }
       },
 
       update: async (data) => {
         try {
-          const usuarioUpdated = await Model.findById(data.id);
+          const usuarioUpdated = await Entity.findById(data.id);
           if (!usuarioUpdated) {
-            throw new Error(`${Model.model.modelName} not found`);
+            throw new Error(`${Entity.model.modelName} not found`);
           }
           usuarioUpdated.set(data);
           return await usuarioUpdated.save();
@@ -41,10 +41,10 @@ module.exports = () => {
 
       delete: async (id) => {
         try {
-          return await Model.findByIdAndRemove(id);
+          return await Entity.findByIdAndRemove(id);
         } catch (error) {
           console.log(error);
-          throw new Error(`${Model.model.modelName} not found`);
+          throw new Error(`${Entity.model.modelName} not found`);
         }
       },
 
