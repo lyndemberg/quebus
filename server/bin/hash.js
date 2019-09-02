@@ -1,10 +1,11 @@
 const bcrypt = require('bcrypt');
-const { SECRET } = process.env;
+
+const { SALT_HASH } = process.env;
 
 module.exports = () => {
-  const hash = {
-    hash: async (password) => bcrypt.hash(password, Math.random()),
+  const hashing = {
+    hash: async (password) => bcrypt.hash(password, SALT_HASH),
     compare: async (password, hash) => bcrypt.compare(password, hash),
-  }
-  return hash;
-}
+  };
+  return hashing;
+};
