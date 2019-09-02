@@ -19,6 +19,7 @@ services:
       - /usr/src/quebus/node_modules
     ports:
       - "3000:3000"
+      - "9229:9229"
     links:
       - mongodb_development
     command: ./wait-for-it.sh mongodb_development:27017 --timeout=2 --strict -- npm run start:dev
