@@ -1,6 +1,10 @@
+const jwt = require('jsonwebtoken');
+
+const { JWT_SECRET, JWT_EXPIRES_IN } = process.env;
+
 module.exports = (api) => {
   const userRepository = api.repositories.user;
-  const { hashing } = api.bin;
+  const hashing = api.bin.hash;
 
   const userService = {
 
@@ -9,7 +13,12 @@ module.exports = (api) => {
       if (user.password && !await hashing.compare(password, user.password)) {
         throw new Error('Invalid password!');
       }
-      return user;
+
+      const token = jwt.sign({ id: user._id, roles: user.roles }, JWT_SECRET, {
+        expiresIn: JWT_EXPIRES_IN,
+      });
+
+      return token;
     },
 
     save: async (user) => {
