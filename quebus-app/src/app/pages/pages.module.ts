@@ -7,6 +7,7 @@ import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.componen
 import { GerenciarUsuariosComponent } from './gerenciar-usuarios/gerenciar-usuarios.component';
 import { LoginComponent } from './login/login.component';
 import { ComponentsModule } from '../components/components.module';
+import { CadastroPerguntaComponent } from './cadastro-pergunta/cadastro-pergunta.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ComponentsModule } from '../components/components.module';
     LoginComponent,
     PagesComponent,
     PaginaInicialComponent,
-    GerenciarUsuariosComponent
+    GerenciarUsuariosComponent,
+    CadastroPerguntaComponent
   ],
   imports: [
     CommonModule,

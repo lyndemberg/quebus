@@ -5,6 +5,7 @@ import { MaterializeModule } from 'angular2-materialize';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PagesModule } from './pages/pages.module';
 import { AppComponent } from './app.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [AppComponent],
@@ -12,6 +13,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     AppRoutingModule,
     MaterializeModule,
+    ToastrModule.forRoot(),
     ReactiveFormsModule,
     PagesModule
   ],
