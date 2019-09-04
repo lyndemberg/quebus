@@ -1,0 +1,23 @@
+{
+	"info": {
+		"_postman_id": "67a07bf8-43e8-4252-9353-ced1171422b5",
+		"name": "URL BASE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

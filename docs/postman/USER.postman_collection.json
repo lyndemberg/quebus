@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "f8525c41-880c-4eed-94c2-2729a3610712",
+		"name": "USER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "save",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Aguirre Sabino\",\n\t\"email\": \"aguirre@email.com\",\n\t\"user\": \"aguirre\",\n\t\"password\": \"1234\",\n\t\"gender\": \"Masculino\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/v1/user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"user"
+					]
+				},
+				"description": "Salvar um novo usuário"
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/user/id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"user",
+						"id"
+					]
+				},
+				"description": "Atualizar um usuário pelo ID"
+			},
+			"response": []
+		},
+		{
+			"name": "findAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"user"
+					]
+				},
+				"description": "Buscar todos os usuários"
+			},
+			"response": []
+		},
+		{
+			"name": "findById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/user/5d61af1c60103800a7414d3a",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"user",
+						"5d61af1c60103800a7414d3a"
+					]
+				},
+				"description": "Buscar um usuário pelo ID"
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/user/5d61adfcee51c8002c9426da",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"user",
+						"5d61adfcee51c8002c9426da"
+					]
+				},
+				"description": "Deletar um usuário pelo ID"
+			},
+			"response": []
+		},
+		{
+			"name": "auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "34217b61-8d90-47a8-8545-49748bc5fe74",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"aguirre\",\n\t\"password\": \"1234\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/v1/user/auth",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"user",
+						"auth"
+					]
+				},
+				"description": "Autentica um usuário utilizando username e password."
+			},
+			"response": []
+		}
+	]
+}
