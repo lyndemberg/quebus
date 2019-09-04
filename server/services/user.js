@@ -18,7 +18,8 @@ module.exports = (api) => {
         expiresIn: JWT_EXPIRES_IN,
       });
 
-      return token;
+      user.password = undefined;
+      return { user, token };
     },
 
     save: async (user) => {

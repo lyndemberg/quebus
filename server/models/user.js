@@ -55,7 +55,7 @@ module.exports = (api) => {
     roles: {
       type: [{ type: String, enum: ['ADMIN', 'NORMAL_USER'] }],
       required: true,
-      default: ['NORMAL_USER', 'ADMIN'],
+      default: ['NORMAL_USER'],
     },
   },
   {
