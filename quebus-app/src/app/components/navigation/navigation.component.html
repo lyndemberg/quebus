@@ -1,0 +1,29 @@
+<nav>
+  <div class="nav-wrapper primary-color">
+    <a href="#!" class="brand-logo">QUEBUS</a>
+    <a materialize="sideNav" (click)='abrirSideNav()' data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a routerLink="['/paginainicial']">Página inicial</a></li>
+      <li><a routerLink="['/gerenciarusuarios']">Gerenciar usuários</a></li>
+      <li><a routerLink="['/minhasperguntas']">Minhas perguntas</a></li>
+      <li><a routerLink="['/minhasrespostas']">Minhas respostas</a></li>
+      <li><a href="badges.html">Sair</a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li>
+          <div class="user-view">
+            <div class="background primary-color">
+          </div>
+          <a href="#!user"><img class="circle" src="images/yuna.jpg"></a>
+          <a href="#!name"><span class="white-text name">John Doe</span></a>
+          <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+          </div>
+      </li>
+      <li><a routerLink="['/paginainicial']">Página inicial</a></li>
+      <li><a routerLink="['/gerenciarusuarios']">Gerenciar usuários</a></li>
+      <li><a routerLink="['/minhasperguntas']">Minhas perguntas</a></li>
+      <li><a routerLink="['/minhasrespostas']">Minhas respostas</a></li>
+      <li><a href="badges.html">Sair</a></li>
+    </ul>
+  </div>
+</nav>
