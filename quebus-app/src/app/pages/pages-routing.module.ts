@@ -7,13 +7,13 @@ import { PaginaInicialComponent } from './pagina-inicial/pagina-inicial.componen
 import { GerenciarUsuariosComponent } from './gerenciar-usuarios/gerenciar-usuarios.component';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
   {
-    path: 'paginainicial',
+    path: '',
     component: PagesComponent,
     children: [
-      { path: 'paginainicial.', component: PaginaInicialComponent },
-      { path: 'gerenciarusuarios.', component: GerenciarUsuariosComponent }
+      { path: 'paginainicial', component: PaginaInicialComponent },
+      { path: 'gerenciarusuarios', component: GerenciarUsuariosComponent }
     ]
   },
 

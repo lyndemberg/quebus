@@ -8,6 +8,7 @@ import { GerenciarUsuariosComponent } from './gerenciar-usuarios/gerenciar-usuar
 import { LoginComponent } from './login/login.component';
 import { ComponentsModule } from '../components/components.module';
 import { CadastroPerguntaComponent } from './cadastro-pergunta/cadastro-pergunta.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { CadastroPerguntaComponent } from './cadastro-pergunta/cadastro-pergunta
   imports: [
     CommonModule,
     PagesRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    ReactiveFormsModule,
   ],
   bootstrap: [LoginComponent]
 })

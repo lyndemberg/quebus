@@ -49,8 +49,9 @@ export class NavigationComponent implements OnInit {
   }
 
   sair(): void {
+    this.sideNavActions.emit({ action: 'sideNav', params: ['hide'] });
     this.usuarioStorage.deslogar();
-    this.router.navigate(['login']);
+    this.router.navigate(['/login']);
   }
 
 }
