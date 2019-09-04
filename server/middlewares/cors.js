@@ -1,9 +1,9 @@
 const cors = require('cors');
 
-module.exports = api => {
+module.exports = (api) => {
   api.use(cors({
-    origin: ['*'],
+    origin: '*',
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    allowedHeaders: ['Content-Type', 'Authorization'],
   }));
-}
+};
