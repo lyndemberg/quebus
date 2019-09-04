@@ -47,9 +47,9 @@ export class LoginComponent implements OnInit, OnDestroy {
         this.router.navigate(['/paginainicial']);
       }, error => {
         if (error.status === 400) {
-          this.toastr.error('Não foi possível entrar no sistema', 'Dados incorretos');
-        } else {
-          this.toastr.error('Não foi possível entrar no sistema', 'Ocorreu um problema');
+          this.toastr.error('', 'Dados incorretos');
+        } else if (error.status === 404) {
+          this.toastr.error('', 'Usuário não cadastrado');
         }
       })
     );
