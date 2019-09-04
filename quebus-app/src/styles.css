@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+.primary-color {
+  background-color: #3d5367 !important;
+}
+html, body, .my-wrapper {
+  height: 100%;
+}

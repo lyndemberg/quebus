@@ -1,0 +1,38 @@
+<nav>
+  <div class="nav-wrapper primary-color">
+    <a href="#!" class="brand-logo">QUEBUS</a>
+    <a materialize="sideNav" (click)='abrirSideNav()' data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a routerLink="['/paginainicial']"><i class="material-icons left">home</i>Página inicial</a></li>
+      <li *ngIf="usuario.roles.includes('ADMIN')">
+        <a routerLink="['/gerenciarusuarios']">
+          <i class="material-icons left">supervisor_account</i>
+          Gerenciar usuários
+        </a>
+      </li>
+      <li><a routerLink="['/minhasperguntas']"><i class="material-icons left">list</i>Minhas perguntas</a></li>
+      <li><a routerLink="['/minhasrespostas']"><i class="material-icons left">question_answer</i>Minhas respostas</a></li>
+      <li><a (click)="sair()"><i class="material-icons left">exit_to_app</i>Sair</a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li>
+          <div class="user-view">
+            <div class="background primary-color">
+          </div>
+          <div class="circle" style="background-color:blue;">
+            <div class="valign-wrapper" style="width:100%; height: 100%; font-size:14pt; font-weight: bolder;">
+              <span>{{textIcon}}</span>
+            </div>
+          </div>
+          <a href="#!name"><span class="white-text name">{{usuario.name}}</span></a>
+          <a href="#!email"><span class="white-text email">{{usuario.email}}</span></a>
+          </div>
+      </li>
+      <li><a routerLink="['/paginainicial']"><i class="material-icons left">home</i>Página inicial</a></li>
+      <li><a routerLink="['/gerenciarusuarios']"><i class="material-icons left">supervisor_account</i>Gerenciar usuários</a></li>
+      <li><a routerLink="['/minhasperguntas']"><i class="material-icons left">list</i>Minhas perguntas</a></li>
+      <li><a routerLink="['/minhasrespostas']"><i class="material-icons left">question_answer</i>Minhas respostas</a></li>
+      <li><a (click)="sair()"><i class="material-icons left">exit_to_app</i>Sair</a></li>
+    </ul>
+  </div>
+</nav>
