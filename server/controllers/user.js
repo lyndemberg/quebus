@@ -16,10 +16,10 @@ module.exports = (api) => {
       }
 
       try {
-        const token = await userService.auth(req.body.username, req.body.password);
+        const data = await userService.auth(req.body.username, req.body.password);
         res.status(httpStatus.OK)
           .json({
-            message: 'OK', status: httpStatus.OK, token,
+            message: 'OK', status: httpStatus.OK, data,
           });
       } catch (error) {
         res.status(httpStatus.NOT_FOUND)
