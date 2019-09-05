@@ -84,6 +84,7 @@ module.exports = (api) => {
 
     delete: async (req, res) => {
       try {
+        await userService.delete(req.params.id);
         res.status(httpStatus.NO_CONTENT);
       } catch (error) {
         res.status(httpStatus.NOT_FOUND)
