@@ -61,6 +61,12 @@ AngularJS é um framework JavaScript código aberto, mantido pelo Google, que au
 </div>
 
 Materialize é um framework Front-End que resolve os mesmos problemas, mas, claro, com suas próprias características. Ele surgiu através de um projeto desenvolvido pela Google e é inspirado no Material Design (design utilizado no sistema operacional para smartphones Android desde a versão 5.0)
+
+## Diagrama de classes
+
+<div>
+    <img src="docs/Diagrama de classes - Projeto QUEBUS.png" width="800" height="600">
+</div>
  
 ## Implantação
 TODO
