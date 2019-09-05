@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "9c13aa9e-29ff-4818-80fe-6c0c7cd7b214",
+		"name": "QUESTION",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "save",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Primeira questão\",\n\t\"description\": \"Descrição da primeira questão\",\n\t\"user\": \"5d705425e2adc605f8c5f0b5\"\n}"
+				},
+				"url": {
+					"raw": "{{url}}/v1/question",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"question"
+					]
+				},
+				"description": "Salvar um novo usuário"
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/question/id",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"question",
+						"id"
+					]
+				},
+				"description": "Atualizar um usuário pelo ID"
+			},
+			"response": []
+		},
+		{
+			"name": "findAll",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/question",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"question"
+					]
+				},
+				"description": "Buscar todos os usuários"
+			},
+			"response": []
+		},
+		{
+			"name": "findById",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/question/5d7060e131b9001519bdef67",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"question",
+						"5d7060e131b9001519bdef67"
+					]
+				},
+				"description": "Buscar um usuário pelo ID"
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/question/5d61adfcee51c8002c9426da",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"question",
+						"5d61adfcee51c8002c9426da"
+					]
+				},
+				"description": "Deletar um usuário pelo ID"
+			},
+			"response": []
+		}
+	]
+}
