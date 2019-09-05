@@ -1,0 +1,55 @@
+<br>
+<div class="container">
+  <div class="row">
+    <h5 class="center-align">Cadastro de usuário</h5>
+  </div>
+  <form [formGroup]="formGroupCadatro" (ngSubmit)="cadastrar()">
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="Nome" formControlName="name" id="name" type="text" class="validate">
+        <label for="name">Nome</label>
+      </div>
+      <div class="input-field col s12">
+        <input placeholder="E-mail" formControlName="email" id="email" type="email" class="validate">
+        <label for="email">E-mail</label>
+      </div>
+      <div class="input-field col s12">
+          <input placeholder="Username" formControlName="user" id="user" type="text" class="validate">
+          <label for="user">Username</label>
+        </div>
+      <div class="input-field col s12">
+        <input id="senha" type="password" formControlName="password" class="validate">
+        <label for="senha">Senha</label>
+      </div>
+      <div class="input-field col s12">
+        <select formControlName="gender" (change)="mudarSexo($event)">
+          <option value="" disabled selected>Escolha o sexo</option>
+          <option [value]="'Masculino'">Masculino</option>
+          <option [value]="'Feminino'">Feminino</option>
+        </select>
+        <label>Sexo</label>
+      </div>
+      <div class="input-field col s12">
+        <select multiple formControlName="roles">
+          <option value="" disabled selected>Escolha as permissões</option>
+          <option [value]="'NORMAL_USER'">Usuário padrão</option>
+          <option [value]="'ADMIN'">Administrador</option>
+        </select>
+        <label>Permissões</label>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn waves-effect waves-light col s10 offset-s1 primary-color"
+        [disabled]="!formGroupCadatro.valid" type="submit">
+        <i class="material-icons left">save</i> Cadastrar
+      </button>
+    </div>
+    <div class="row">
+      <button class="btn waves-effect waves-light col s10 offset-s1 white black-text"
+          (click)="clicTest()" type="button">
+          <!-- [routerLink]="['/gerenciarusuarios']" -->
+        <i class="material-icons left">close</i> Cancelar
+      </button>
+    </div>
+  </form>
+</div>
