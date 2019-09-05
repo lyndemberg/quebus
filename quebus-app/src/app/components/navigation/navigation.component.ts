@@ -41,7 +41,7 @@ export class NavigationComponent implements OnInit {
     this.sideNavActions.emit({ action: 'sideNav', params: ['show'] });
   }
   fecharSideNav() {
-    this.sideNavActions.emit({ action: 'sideNav', params: ['hide'] });
+    ($(this.el.nativeElement) as any).find('.button-collapse').sideNav('hide');
   }
 
   private carregarSideNav(): void {
@@ -49,7 +49,7 @@ export class NavigationComponent implements OnInit {
   }
 
   sair(): void {
-    ($(this.el.nativeElement) as any).find('.button-collapse').sideNav('hide');
+    this.fecharSideNav();
     this.usuarioStorage.deslogar();
     this.router.navigate(['/login']);
   }
