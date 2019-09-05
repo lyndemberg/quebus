@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   templateUrl: './gerenciar-usuarios.component.html',
@@ -6,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GerenciarUsuariosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private titleService: Title) { }
 
   ngOnInit() {
+    this.titleService.setTitle('QUEBUS - Gerenciar usuários');
   }
 
 }

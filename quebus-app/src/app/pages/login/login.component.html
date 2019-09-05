@@ -8,7 +8,7 @@
             <img class="responsive-img" src="assets/logo.png"/>
           </div>
         </div>
-        <form formGroup="formGroupLogin" (ngSubmit)="logar()">
+        <form [formGroup]="formGroupLogin" (ngSubmit)="logar()">
           <div class="row">
             <div class="input-field col s12">
               <input placeholder="Username" formControlName="username" id="username" type="text" class="validate">
