@@ -30,7 +30,7 @@ Para auxiliar no desenvolvimento da aplicação elgumas ferramentas serão utili
 - **Back-End** -Nodejs, express.
 - **Front-End** - Angular, Materialize.
 
-**Node** 
+**1 - Node** 
 
 <div align="center">
     <img src="https://software.intel.com/sites/default/files/managed/fa/a0/Runtime-logo-Node.jpg" width="250" height="150">
@@ -38,7 +38,7 @@ Para auxiliar no desenvolvimento da aplicação elgumas ferramentas serão utili
 
 O Node.js pode ser definido como um ambiente de execução Javascript server-side. Isso significa que com o Node.js é possível criar aplicações Javascript para rodar como uma aplicação standalone em uma máquina, não dependendo de um browser para a execução, como estamos acostumados. Apesar de recente, o Node.js já é utilizado por grandes empresas no mercado de tecnologia, como Netflix, Uber e LinkedIn.
 
-**Express**
+**2 - Express**
 
 <div align="center">
     <img src="https://miro.medium.com/max/832/1*uPL1uCtLBRSk6akPL2hNzg.jpeg" width="250" height="150">
@@ -46,7 +46,7 @@ O Node.js pode ser definido como um ambiente de execução Javascript server-sid
 
 O Express é um framework para aplicativo da web do Node.js mínimo e flexível que fornece um conjunto robusto de recursos para aplicativos web e móvel.
 
-**Angular**
+**3 - Angular**
 
 <div align="center">
     <img src="https://miro.medium.com/max/4583/1*P7x-_0XfQz6CVmMY_QAv0w.png" width="250" height="150">
@@ -54,7 +54,7 @@ O Express é um framework para aplicativo da web do Node.js mínimo e flexível 
 
 AngularJS é um framework JavaScript código aberto, mantido pelo Google, que auxilia na execução de single-page applications. Seu objetivo é aumentar aplicativos que podem ser acessados por um navegador web, foi construído sob o padrão model-view-view-model (MVVM), em um esforço para facilitar tanto o desenvolvimento quanto o teste dos aplicativos.
 
-**Materialize**
+**4 - Materialize**
 
 <div align="center">
     <img src="https://cdn.nearsoft.com/uploads/2016/11/how-to-center-your-content-with-materialize-top-800x318.png" width="250" height="150">
