@@ -3,21 +3,21 @@
     <a href="#!" class="brand-logo">QUEBUS</a>
     <a materialize="sideNav" (click)='abrirSideNav()' data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
     <ul class="right hide-on-med-and-down">
-      <li><a routerLink="['/paginainicial']"><i class="material-icons left">home</i>Página inicial</a></li>
+      <li><a [routerLink]="['/paginainicial']"><i class="material-icons left">home</i>Página inicial</a></li>
       <li *ngIf="usuario.roles.includes('ADMIN')">
-        <a routerLink="['/gerenciarusuarios']">
+        <a [routerLink]="'/gerenciarusuarios'">
           <i class="material-icons left">supervisor_account</i>
           Gerenciar usuários
         </a>
       </li>
       <li *ngIf="usuario.roles.includes('ADMIN')">
-        <a routerLink="['/gerenciarusuarios']">
+        <a [routerLink]="['/gerenciarobservacao']">
           <i class="material-icons left">add_alert</i>
           Gerenciar observação
         </a>
       </li>
-      <li><a routerLink="['/minhasperguntas']"><i class="material-icons left">list</i>Minhas perguntas</a></li>
-      <li><a routerLink="['/minhasrespostas']"><i class="material-icons left">question_answer</i>Minhas respostas</a></li>
+      <li><a [routerLink]="['/minhasperguntas']"><i class="material-icons left">list</i>Minhas perguntas</a></li>
+      <li><a [routerLink]="['/minhasrespostas']"><i class="material-icons left">question_answer</i>Minhas respostas</a></li>
       <li><a (click)="sair()"><i class="material-icons left">exit_to_app</i>Sair</a></li>
     </ul>
     <ul class="side-nav" id="mobile-demo">
@@ -36,19 +36,19 @@
       </li>
       <li><a routerLink="['/paginainicial']"><i class="material-icons left">home</i>Página inicial</a></li>
       <li *ngIf="usuario.roles.includes('ADMIN')">
-          <a routerLink="['/gerenciarusuarios']">
+          <a [routerLink]="['/gerenciarusuarios']">
             <i class="material-icons left">supervisor_account</i>
             Gerenciar usuários
           </a>
         </li>
         <li *ngIf="usuario.roles.includes('ADMIN')">
-          <a routerLink="['/gerenciarusuarios']">
+          <a [routerLink]="['/gerenciarusuarios']">
             <i class="material-icons left">add_alert</i>
             Gerenciar observação
           </a>
         </li>
-      <li><a routerLink="['/minhasperguntas']"><i class="material-icons left">list</i>Minhas perguntas</a></li>
-      <li><a routerLink="['/minhasrespostas']"><i class="material-icons left">question_answer</i>Minhas respostas</a></li>
+        <li><a [routerLink]="['/minhasperguntas']"><i class="material-icons left">list</i>Minhas perguntas</a></li>
+        <li><a [routerLink]="['/minhasrespostas']"><i class="material-icons left">question_answer</i>Minhas respostas</a></li>
       <li><a (click)="sair()"><i class="material-icons left">exit_to_app</i>Sair</a></li>
     </ul>
   </div>

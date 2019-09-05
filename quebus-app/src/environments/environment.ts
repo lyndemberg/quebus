@@ -5,7 +5,8 @@
 export const environment = {
   production: false,
   urlBaseApi: 'http://localhost:3000/quebus',
-  authPath: '/v1/user/auth'
+  authPath: '/v1/user/auth',
+  usuarioPath: '/v1/user/auth'
 };
 
 /*
