@@ -6,7 +6,7 @@ import { UsuarioStorageService } from '../services/usuario-storage.service';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthInterceptor implements HttpInterceptor {
+export class TokenInterceptor implements HttpInterceptor {
 
   constructor(private usuarioStorageService: UsuarioStorageService) { }
 
