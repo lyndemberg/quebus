@@ -10,12 +10,14 @@ import { GerenciarObservacaoComponent } from './gerenciar-observacao/gerenciar-o
 import { MinhasPerguntasComponent } from './minhas-perguntas/minhas-perguntas.component';
 import { MinhasRespostasComponent } from './minhas-respostas/minhas-respostas.component';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import { RouteGuard } from '../core/guards/route.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {
     path: '',
     component: PagesComponent,
+    canActivate: [RouteGuard],
     children: [
       { path: 'paginainicial', component: PaginaInicialComponent },
       { path: 'gerenciarusuarios', component: GerenciarUsuariosComponent },
