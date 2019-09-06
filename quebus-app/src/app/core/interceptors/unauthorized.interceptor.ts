@@ -7,7 +7,7 @@ import { tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthInterceptor implements HttpInterceptor {
+export class UnauthorizedInterceptor implements HttpInterceptor {
 
   constructor(private usuarioStorageService: UsuarioStorageService) { }
 
@@ -17,9 +17,9 @@ export class AuthInterceptor implements HttpInterceptor {
             (event: HttpEvent<any>) => {},
             (err: any) => {
                 if (err instanceof HttpErrorResponse) {
-                    if (err.status === 401) {
-                        this.usuarioStorageService.deslogar();
-                    }
+                  if (err.status === 401) {
+                    this.usuarioStorageService.deslogar();
+                  }
                 }
             }
         )
