@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/material.theme.css";
 .primary-color {
   background-color: #3d5367 !important;
 }
 html, body, .my-wrapper {
   height: 100%;
+}
+.browser-default-select{
+  border-width: 1px;
+  border-color: #3d5367 !important;
 }

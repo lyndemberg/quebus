@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import * as jQuery from 'jquery';
 
 @Component({
   templateUrl: './cadastro-usuario.component.html',
@@ -28,21 +29,10 @@ export class CadastroUsuarioComponent implements OnInit, OnDestroy {
               private el: ElementRef) { }
 
   ngOnInit() {
-    ($(this.el.nativeElement) as any).find('select').material_select();
   }
 
   ngOnDestroy(): void {
     if (this.subscription != null) { this.subscription.unsubscribe(); }
-  }
-
-  mudarSexo(e) {
-    this.formGroupCadatro.get('gender').setValue(e.target.value, {
-      onlySelf: true
-    });
-  }
-
-  clicTest(): void {
-    console.log('======>', this.formGroupCadatro.value);
   }
 
   cadastrar(): void {

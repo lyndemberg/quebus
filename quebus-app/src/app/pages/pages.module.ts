@@ -14,7 +14,7 @@ import { GerenciarObservacaoComponent } from './gerenciar-observacao/gerenciar-o
 import { MinhasPerguntasComponent } from './minhas-perguntas/minhas-perguntas.component';
 import { MinhasRespostasComponent } from './minhas-respostas/minhas-respostas.component';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
-
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,8 @@ import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.co
     CommonModule,
     ComponentsModule,
     ReactiveFormsModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    NgSelectModule
   ],
   bootstrap: [LoginComponent]
 })

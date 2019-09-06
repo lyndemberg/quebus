@@ -14,28 +14,27 @@
         <label for="email">E-mail</label>
       </div>
       <div class="input-field col s12">
-          <input placeholder="Username" formControlName="user" id="user" type="text" class="validate">
-          <label for="user">Username</label>
-        </div>
+        <input placeholder="Username" formControlName="user" id="user" type="text" class="validate">
+        <label for="user">Username</label>
+      </div>
       <div class="input-field col s12">
         <input id="senha" type="password" formControlName="password" class="validate">
         <label for="senha">Senha</label>
       </div>
-      <div class="input-field col s12">
-        <select formControlName="gender" (change)="mudarSexo($event)">
-          <option value="" disabled selected>Escolha o sexo</option>
-          <option [value]="'Masculino'">Masculino</option>
-          <option [value]="'Feminino'">Feminino</option>
-        </select>
-        <label>Sexo</label>
+      <div class="col s12">
+        <ng-select #agreeSelect labelForId="sexo" [searchable]="false"
+            placeholder="Sexo" formControlName="gender">
+            <ng-option [value]="'Masculino'">Masculino</ng-option>
+            <ng-option [value]="'Feminino'">Feminino</ng-option>
+        </ng-select>
       </div>
-      <div class="input-field col s12">
-        <select multiple formControlName="roles">
-          <option value="" disabled selected>Escolha as permissões</option>
-          <option [value]="'NORMAL_USER'">Usuário padrão</option>
-          <option [value]="'ADMIN'">Administrador</option>
-        </select>
-        <label>Permissões</label>
+      <div class="col s12">
+        <ng-select  [multiple]="true"
+                    placeholder="Permissões"
+                    formControlName="roles">
+            <ng-option [value]="'NORMAL_USER'">Usuário padrão</ng-option>
+            <ng-option [value]="'ADMIN'">Administrador</ng-option>
+        </ng-select>
       </div>
     </div>
     <div class="row">
@@ -46,8 +45,7 @@
     </div>
     <div class="row">
       <button class="btn waves-effect waves-light col s10 offset-s1 white black-text"
-          (click)="clicTest()" type="button">
-          <!-- [routerLink]="['/gerenciarusuarios']" -->
+        [routerLink]="['/gerenciarusuarios']" type="button">
         <i class="material-icons left">close</i> Cancelar
       </button>
     </div>
