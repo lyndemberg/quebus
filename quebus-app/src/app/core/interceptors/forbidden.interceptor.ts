@@ -9,7 +9,7 @@ import { ToastrService } from 'ngx-toastr';
 @Injectable({
   providedIn: 'root'
 })
-export class UnauthorizedInterceptor implements HttpInterceptor {
+export class ForbiddenInterceptor implements HttpInterceptor {
 
   constructor(private usuarioStorageService: UsuarioStorageService,
               private router: Router,
@@ -21,10 +21,9 @@ export class UnauthorizedInterceptor implements HttpInterceptor {
             (event: HttpEvent<any>) => {},
             (err: any) => {
                 if (err instanceof HttpErrorResponse) {
-                  if (err.status === 401) {
-                    this.usuarioStorageService.deslogar();
-                    this.toastr.error('', 'Você precisa realizar o login!');
-                    this.router.navigate(['/login']);
+                  if (err.status === 403) {
+                    this.toastr.error('', 'Você não tem permissão para este acesso!');
+                    this.router.navigate(['/paginainicial']);
                   }
                 }
             }
