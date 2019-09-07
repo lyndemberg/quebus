@@ -1,1 +1,15 @@
-<p>gerenciar-usuarios works!</p>
+<br>
+<div class="container">
+  <div class="row">
+    <h5 class="center-align">Gerenciar usuários</h5>
+  </div>
+
+  <app-usuario-list-component [usuarioList]="usuarioList"></app-usuario-list-component>
+
+
+  <div class="fixed-action-btn horizontal">
+    <a [routerLink]="['/cadastrousuario']" class="btn-floating btn-large waves-effect waves-light light-blue darken-4">
+      <i class="material-icons">add</i>
+    </a>
+  </div>
+</div>

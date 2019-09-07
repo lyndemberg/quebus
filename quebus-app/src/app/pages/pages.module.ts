@@ -13,7 +13,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { GerenciarObservacaoComponent } from './gerenciar-observacao/gerenciar-observacao.component';
 import { MinhasPerguntasComponent } from './minhas-perguntas/minhas-perguntas.component';
 import { MinhasRespostasComponent } from './minhas-respostas/minhas-respostas.component';
-
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -25,13 +26,15 @@ import { MinhasRespostasComponent } from './minhas-respostas/minhas-respostas.co
     PageNotFoundComponent,
     GerenciarObservacaoComponent,
     MinhasPerguntasComponent,
-    MinhasRespostasComponent
+    MinhasRespostasComponent,
+    CadastroUsuarioComponent
   ],
   imports: [
     CommonModule,
     ComponentsModule,
     ReactiveFormsModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    NgSelectModule
   ],
   bootstrap: [LoginComponent]
 })

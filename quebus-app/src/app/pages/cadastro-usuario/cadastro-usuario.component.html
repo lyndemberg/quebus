@@ -1,0 +1,53 @@
+<br>
+<div class="container">
+  <div class="row">
+    <h5 class="center-align">Cadastro de usuário</h5>
+  </div>
+  <form [formGroup]="formGroupCadatro" (ngSubmit)="cadastrar()">
+    <div class="row">
+      <div class="input-field col s12">
+        <input placeholder="Nome" formControlName="name" id="name" type="text" class="validate">
+        <label for="name">Nome</label>
+      </div>
+      <div class="input-field col s12">
+        <input placeholder="E-mail" formControlName="email" id="email" type="email" class="validate">
+        <label for="email">E-mail</label>
+      </div>
+      <div class="input-field col s12">
+        <input placeholder="Username" formControlName="user" id="user" type="text" class="validate">
+        <label for="user">Username</label>
+      </div>
+      <div class="input-field col s12">
+        <input id="senha" type="password" formControlName="password" class="validate">
+        <label for="senha">Senha</label>
+      </div>
+      <div class="col s12">
+        <ng-select #agreeSelect labelForId="sexo" [searchable]="false"
+            placeholder="Sexo" formControlName="gender">
+            <ng-option [value]="'Masculino'">Masculino</ng-option>
+            <ng-option [value]="'Feminino'">Feminino</ng-option>
+        </ng-select>
+      </div>
+      <div class="col s12">
+        <ng-select  [multiple]="true"
+                    placeholder="Permissões"
+                    formControlName="roles">
+            <ng-option [value]="'NORMAL_USER'">Usuário padrão</ng-option>
+            <ng-option [value]="'ADMIN'">Administrador</ng-option>
+        </ng-select>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn waves-effect waves-light col s10 offset-s1 primary-color"
+        [disabled]="!formGroupCadatro.valid" type="submit">
+        <i class="material-icons left">save</i> Cadastrar
+      </button>
+    </div>
+    <div class="row">
+      <button class="btn waves-effect waves-light col s10 offset-s1 white black-text"
+        [routerLink]="['/gerenciarusuarios']" type="button">
+        <i class="material-icons left">close</i> Cancelar
+      </button>
+    </div>
+  </form>
+</div>

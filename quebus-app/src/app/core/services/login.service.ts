@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class LoginService {
 
-  private URL = environment.urlBaseApi + environment.authPath;
+  private URL_RESOURCE = environment.urlBaseApi + environment.authPath;
 
   constructor(private http: HttpClient) { }
 
@@ -18,6 +18,6 @@ export class LoginService {
       username: `${username}`,
       password: `${password}`
     };
-    return this.http.post(this.URL, data, {observe: 'response'});
+    return this.http.post(this.URL_RESOURCE, data, {observe: 'response'});
   }
 }
