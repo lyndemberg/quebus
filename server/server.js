@@ -6,7 +6,7 @@ const api = express();
 consign()
   .include('middlewares')
   .then('config/db/mongoConnection.js')
-  .then('bin')
+  .then('commons')
   .then('models')
   .then('repositories')
   .then('services')

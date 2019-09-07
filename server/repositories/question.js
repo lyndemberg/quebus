@@ -1,6 +1,6 @@
 module.exports = (api) => {
   const Question = api.models.question;
-  const genericRepository = api.bin.genericRepository(Question);
+  const genericRepository = api.commons.genericRepository(Question);
 
   const questionRepository = {
     save: async (question) => genericRepository.save(question),

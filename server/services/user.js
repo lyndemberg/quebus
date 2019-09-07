@@ -4,7 +4,7 @@ const { JWT_SECRET, JWT_EXPIRES_IN } = process.env;
 
 module.exports = (api) => {
   const userRepository = api.repositories.user;
-  const hashing = api.bin.hash;
+  const hashing = api.commons.hash;
 
   const userService = {
 

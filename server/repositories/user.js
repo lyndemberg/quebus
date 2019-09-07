@@ -1,6 +1,6 @@
 module.exports = (api) => {
   const User = api.models.user;
-  const genericRepository = api.bin.genericRepository(User);
+  const genericRepository = api.commons.genericRepository(User);
 
   const userRepository = {
     save: async (user) => genericRepository.save(user),

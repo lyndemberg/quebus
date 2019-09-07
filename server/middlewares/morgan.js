@@ -1,5 +1,5 @@
 const morgan = require('morgan');
 
-module.exports = api => {
+module.exports = (api) => {
   api.use(morgan('common'));
-}
+};

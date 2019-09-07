@@ -1,5 +1,5 @@
 const compression = require('compression');
 
-module.exports = api => {
+module.exports = (api) => {
   api.use(compression());
-}
+};
