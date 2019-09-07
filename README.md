@@ -20,7 +20,6 @@ O sistema QUEBUS é um sistema para questões de trabalho, como buscar respostas
 - **Respostas em alta** - As respostas mais votadas vão ficar no topo da página.
 - **Fazer cadastro** - Cadastrar o funcionário.
 - **Fazer Login** - Logar com a conta funcionario.
-- **Gerenciar conta** - Onde o funcioário poderá editar suas informações.
  
 
 ## Tecnologias utilizadas
