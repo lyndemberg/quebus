@@ -1,1 +1,1 @@
-docker-compose down
+docker-compose -f development.yml down
