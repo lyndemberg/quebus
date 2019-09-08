@@ -5,7 +5,7 @@ module.exports = (api) => {
   const userRepository = {
     save: async (user) => genericRepository.save(user),
 
-    findAll: async () => genericRepository.findAll(),
+    find: async (query = {}) => genericRepository.find(query),
 
     findById: async (id) => genericRepository.findById(id),
 

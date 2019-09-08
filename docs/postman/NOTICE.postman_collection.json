@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "9c13aa9e-29ff-4818-80fe-6c0c7cd7b214",
-		"name": "QUESTION",
+		"_postman_id": "f400068a-ec9e-4df2-a09b-41d1df59b7aa",
+		"name": "NOTICE",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -29,16 +29,16 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"title\": \"Segunda questão\",\n\t\"description\": \"Descrição da segunda questão\",\n\t\"user\": \"5d705425e2adc605f8c5f0b5\"\n}"
+					"raw": "{\n\t\"message\": \"Segunda notícia\",\n\t\"user\": \"5d74bdab96974118bcc679fe\"\n}"
 				},
 				"url": {
-					"raw": "{{url}}/v1/question",
+					"raw": "{{url}}/v1/notice",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"v1",
-						"question"
+						"notice"
 					]
 				},
 				"description": "Salvar um novo usuário"
@@ -61,13 +61,13 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/v1/question/id",
+					"raw": "{{url}}/v1/notice/id",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"v1",
-						"question",
+						"notice",
 						"id"
 					]
 				},
@@ -91,13 +91,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/v1/question",
+					"raw": "{{url}}/v1/notice",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"v1",
-						"question"
+						"notice"
 					]
 				},
 				"description": "Buscar todos os usuários"
@@ -120,13 +120,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/v1/question/5d7060e131b9001519bdef67",
+					"raw": "{{url}}/v1/notice/5d7060e131b9001519bdef67",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"v1",
-						"question",
+						"notice",
 						"5d7060e131b9001519bdef67"
 					]
 				},
@@ -150,13 +150,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/v1/question/5d61adfcee51c8002c9426da",
+					"raw": "{{url}}/v1/notice/5d61adfcee51c8002c9426da",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"v1",
-						"question",
+						"notice",
 						"5d61adfcee51c8002c9426da"
 					]
 				},
@@ -180,24 +180,46 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/v1/question?user=5d705425e2adc605f8c5f0b5",
+					"raw": "{{url}}/v1/notice?message=Primeira notícia",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"v1",
-						"question"
+						"notice"
 					],
 					"query": [
 						{
-							"key": "user",
-							"value": "5d705425e2adc605f8c5f0b5"
+							"key": "message",
+							"value": "Primeira notícia"
 						}
 					]
 				},
 				"description": "Busca uma questão filtrando por parâmetros"
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "4cc15118-fe55-40d9-a1a2-423ae4c9a223",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c6f25b9a-0bd6-497a-bfc4-b5d023d04c8b",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }

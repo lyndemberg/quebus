@@ -1,14 +1,14 @@
 module.exports = (api) => {
-  const repository = api.repositories.question;
+  const repository = api.repositories.notice;
 
   const service = {
-    save: async (question) => repository.save(question),
+    save: async (notice) => repository.save(notice),
 
     find: async (query = {}) => repository.find(query),
 
     findById: async (id) => repository.findById(id),
 
-    update: async (question) => repository.update(question),
+    update: async (notice) => repository.update(notice),
 
     delete: async (id) => repository.delete(id),
   };

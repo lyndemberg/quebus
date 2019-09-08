@@ -1,7 +1,7 @@
 const httpStatusCode = require('http-status-codes');
 
 module.exports = (api) => {
-  const service = api.services.question;
+  const service = api.services.notice;
 
   const controller = {
     save: async (req, res) => {

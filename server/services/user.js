@@ -27,7 +27,7 @@ module.exports = (api) => {
       userRepository.save(user);
     },
 
-    findAll: async () => userRepository.findAll(),
+    find: async (query = {}) => userRepository.find(query),
 
     findById: async (id) => userRepository.findById(id),
 

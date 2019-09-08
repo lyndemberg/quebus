@@ -44,8 +44,8 @@ module.exports = (api) => {
       }
     },
 
-    findAll: async (req, res) => {
-      const data = await userService.findAll();
+    find: async (req, res) => {
+      const data = await userService.find(req.query);
       res.status(httpStatus.OK)
         .json({
           message: 'OK', status: httpStatus.OK, data,
