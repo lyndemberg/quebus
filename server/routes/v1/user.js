@@ -1,10 +1,11 @@
 const express = require('express');
 
 module.exports = (api) => {
-  const URL_BASE = '/quebus/v1/user';
   const userController = api.controllers.user;
   const auth = api.middlewares.authorization;
   const role = api.commons.roles;
+
+  const URL_BASE = '/quebus/v1/user';
   const router = express.Router();
 
   router.post(`${URL_BASE}/auth`, async (req, res) => userController.auth(req, res));
