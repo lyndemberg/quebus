@@ -7,7 +7,7 @@
 
 
 QUEBUS é uma abreviatura para Question Business. Ele se trata de um sistema colaborativo que visa a troca de informações sobre processos internos de uma empresa. É dito 'de uma empresa' porque a ideia é de que este softwarre que possa ser implantado internamente em uma empresa que visa empregar estratégias para a gestão do conhecimento.
-
+Esse sistema faz parte de um projeto de disciplina de RHT do IFPB. Ele tem comoobjetivo aplicar áreas da gestão de conhecimento em um ambiente empresarial.
 
 ## Funcionalidades
 O sistema QUEBUS é um sistema para questões de trabalho, como buscar respostas para dúvidas recorrentes buscando sempre um atender o funcionário da melhor forma possível. 
@@ -20,7 +20,6 @@ O sistema QUEBUS é um sistema para questões de trabalho, como buscar respostas
 - **Respostas em alta** - As respostas mais votadas vão ficar no topo da página.
 - **Fazer cadastro** - Cadastrar o funcionário.
 - **Fazer Login** - Logar com a conta funcionario.
-- **Gerenciar conta** - Onde o funcioário poderá editar suas informações.
  
 
 ## Tecnologias utilizadas
