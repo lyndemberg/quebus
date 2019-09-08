@@ -20,4 +20,8 @@ export class UsuarioService {
   cadastrar(usuario: Usuario): Observable<HttpResponse<any>> {
     return this.http.post(this.URL_RESOURCE, usuario, { observe: 'response'} );
   }
+
+  deletar(id: string): Observable<HttpResponse<any>> {
+    return this.http.delete(`${this.URL_RESOURCE}/${id}`, { observe: 'response' });
+  }
 }
