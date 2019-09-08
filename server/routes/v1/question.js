@@ -8,7 +8,7 @@ module.exports = (api) => {
   const URL_BASE = '/quebus/v1/question';
   const router = express.Router();
 
-  router.get(`${URL_BASE}`, auth([role.type.NORMAL_USER]), async (req, res) => controller.findAll(req, res));
+  router.get(`${URL_BASE}`, auth([role.type.NORMAL_USER]), async (req, res) => controller.find(req, res));
   router.post(`${URL_BASE}`, auth([role.type.NORMAL_USER]), async (req, res) => controller.save(req, res));
 
   router.put(`${URL_BASE}/:id`, auth([role.type.NORMAL_USER]), async (req, res) => controller.update(req, res));

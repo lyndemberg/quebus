@@ -19,8 +19,8 @@ module.exports = (api) => {
       }
     },
 
-    findAll: async (req, res) => {
-      const data = await service.findAll();
+    find: async (req, res) => {
+      const data = await service.find(req.query);
       res.status(httpStatusCode.OK)
         .json({
           message: 'OK', status: httpStatusCode.OK, data,
@@ -30,6 +30,21 @@ module.exports = (api) => {
     findById: async (req, res) => {
       try {
         const data = await service.findById(req.params.id);
+        res.status(httpStatusCode.OK)
+          .json({
+            message: 'OK', status: httpStatusCode.OK, data,
+          });
+      } catch (error) {
+        res.status(httpStatusCode.NOT_FOUND)
+          .json({
+            message: error.message, status: httpStatusCode.NOT_FOUND,
+          });
+      }
+    },
+
+    findByUserId: async (req, res) => {
+      try {
+        const data = await service.findByUserId(req.query.user);
         res.status(httpStatusCode.OK)
           .json({
             message: 'OK', status: httpStatusCode.OK, data,

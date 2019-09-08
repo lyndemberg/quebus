@@ -5,9 +5,11 @@ module.exports = (api) => {
   const questionRepository = {
     save: async (question) => genericRepository.save(question),
 
-    findAll: async () => genericRepository.findAll(),
+    find: async (query = {}) => genericRepository.find(query),
 
     findById: async (id) => genericRepository.findById(id),
+
+    findByUserId: async (userId) => Question.find({ user: userId }),
 
     update: async (question) => genericRepository.update(question),
 

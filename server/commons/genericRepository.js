@@ -14,7 +14,7 @@ module.exports = () => {
         }
       },
 
-      findAll: async () => Entity.find(),
+      find: async (query = {}) => Entity.find(query),
 
       findById: async (id) => {
         try {
