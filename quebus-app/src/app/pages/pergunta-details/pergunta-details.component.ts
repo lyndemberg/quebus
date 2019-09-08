@@ -11,7 +11,7 @@ import { toast } from 'angular2-materialize';
 })
 export class PerguntaDetailsComponent implements OnInit {
 
-  pergunta: Pergunta;
+  pergunta: Pergunta = new Pergunta();
   private subscriptions: Subscription[] = [];
 
   constructor(private perguntaService: PerguntaService,

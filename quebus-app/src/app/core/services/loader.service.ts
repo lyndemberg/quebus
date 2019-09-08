@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Injectable({
@@ -7,6 +7,10 @@ import { Subject } from 'rxjs';
 export class LoaderService {
 
   isLoading = new Subject<boolean>();
+
+  constructor() {
+    this.isLoading.next(false);
+  }
 
   show() {
       this.isLoading.next(true);

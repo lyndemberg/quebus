@@ -16,6 +16,7 @@ import { MinhasRespostasComponent } from './minhas-respostas/minhas-respostas.co
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { PerguntaDetailsComponent } from './pergunta-details/pergunta-details.component';
+import { NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,8 @@ import { PerguntaDetailsComponent } from './pergunta-details/pergunta-details.co
     ReactiveFormsModule,
     PagesRoutingModule,
     NgSelectModule
+  ],
+  providers: [
   ],
   bootstrap: [LoginComponent]
 })

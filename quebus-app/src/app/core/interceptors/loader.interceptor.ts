@@ -8,7 +8,7 @@ import { finalize } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
-export class TokenInterceptor implements HttpInterceptor {
+export class LoaderInterceptor implements HttpInterceptor {
 
   constructor(private loaderService: LoaderService) { }
 
