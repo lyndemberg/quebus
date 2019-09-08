@@ -51,6 +51,8 @@ module.exports = (api) => {
       required: false,
     },
     comments: [CommentSchema],
+  }, {
+    timestamps: true,
   });
 
   return db.model('Question', QuestionSchema);
