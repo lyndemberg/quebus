@@ -4,6 +4,19 @@ module.exports = (api) => {
   const db = api.config.db.mongoConnection;
   const { Schema } = mongoose;
 
+  const EvaluationSchema = new Schema({
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
+    evaluation: {
+      type: String,
+      enum: ['LIKE', 'UNLIKE'],
+      required: false,
+    },
+  });
+
   const CommentSchema = new Schema({
     comment: {
       type: String,
@@ -16,11 +29,7 @@ module.exports = (api) => {
       ref: 'User',
       required: true,
     },
-    evaluation: {
-      type: String,
-      enum: ['LIKE', 'UNLIKE'],
-      required: false,
-    },
+    evaluation: [EvaluationSchema],
   });
 
   const QuestionSchema = new Schema({
