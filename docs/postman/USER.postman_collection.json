@@ -8,6 +8,16 @@
 		{
 			"name": "save",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -19,7 +29,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"name\": \"Aguirre Sabino\",\n\t\"email\": \"aguirre@email.com\",\n\t\"user\": \"aguirre\",\n\t\"password\": \"1234\",\n\t\"gender\": \"Masculino\"\n}"
+					"raw": "{\n\t\"name\": \"Aguirre\",\n\t\"email\": \"aguirre@email.com\",\n\t\"user\": \"aguirre\",\n\t\"password\": \"1234\",\n\t\"gender\": \"Masculino\"\n}"
 				},
 				"url": {
 					"raw": "{{url}}/v1/user",
@@ -38,6 +48,16 @@
 		{
 			"name": "update",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "PUT",
 				"header": [],
 				"url": {
@@ -58,6 +78,16 @@
 		{
 			"name": "findAll",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -77,6 +107,16 @@
 		{
 			"name": "findById",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -97,6 +137,16 @@
 		{
 			"name": "delete",
 			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
 				"url": {
@@ -122,8 +172,18 @@
 					"script": {
 						"id": "34217b61-8d90-47a8-8545-49748bc5fe74",
 						"exec": [
-							"var jsonData = JSON.parse(responseBody);",
-							"postman.setEnvironmentVariable(\"token\", jsonData.token);"
+							"var jsonData = pm.response.json();",
+							"pm.environment.set(\"token\", jsonData.data.token);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "e880d49c-e1ad-420b-8c89-92b387c141c2",
+						"exec": [
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -141,7 +201,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"username\": \"aguirre\",\n\t\"password\": \"1234\"\n}"
+					"raw": "{\n\t\"username\": \"ana\",\n\t\"password\": \"1234\"\n}"
 				},
 				"url": {
 					"raw": "{{url}}/v1/user/auth",
