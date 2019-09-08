@@ -42,21 +42,6 @@ module.exports = (api) => {
       }
     },
 
-    findByUserId: async (req, res) => {
-      try {
-        const data = await service.findByUserId(req.query.user);
-        res.status(httpStatusCode.OK)
-          .json({
-            message: 'OK', status: httpStatusCode.OK, data,
-          });
-      } catch (error) {
-        res.status(httpStatusCode.NOT_FOUND)
-          .json({
-            message: error.message, status: httpStatusCode.NOT_FOUND,
-          });
-      }
-    },
-
     update: async (req, res) => {
       try {
         const data = await service.update(req.body);

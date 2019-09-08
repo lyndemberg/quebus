@@ -8,8 +8,6 @@ module.exports = (api) => {
 
     findById: async (id) => repository.findById(id),
 
-    findByUserId: async (userId) => repository.findByUserId(userId),
-
     update: async (question) => repository.update(question),
 
     delete: async (id) => repository.delete(id),

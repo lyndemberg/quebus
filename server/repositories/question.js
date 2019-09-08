@@ -9,8 +9,6 @@ module.exports = (api) => {
 
     findById: async (id) => genericRepository.findById(id),
 
-    findByUserId: async (userId) => Question.find({ user: userId }),
-
     update: async (question) => genericRepository.update(question),
 
     delete: async (id) => genericRepository.delete(id),
