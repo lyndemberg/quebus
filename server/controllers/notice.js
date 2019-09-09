@@ -42,6 +42,17 @@ module.exports = (api) => {
       }
     },
 
+    lastNotice: async (req, res) => {
+      try {
+        const data = await service.lastNotice();
+        res.status(httpStatusCode.OK).json({
+          message: 'OK', status: httpStatusCode.OK, data,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
     update: async (req, res) => {
       try {
         const data = await service.update(req.body);
