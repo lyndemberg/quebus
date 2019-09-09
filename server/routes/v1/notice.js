@@ -11,7 +11,7 @@ module.exports = (api) => {
   router.get(`${URL_BASE}`, auth([role.type.ADMIN]), async (req, res) => controller.find(req, res));
   router.post(`${URL_BASE}`, auth([role.type.ADMIN]), async (req, res) => controller.save(req, res));
 
-  router.get(`${URL_BASE}/last`, auth([role.type.ADMIN]), async (req, res) => controller.lastNotice(req, res));
+  router.get(`${URL_BASE}/last`, auth([role.type.ADMIN, role.type.NORMAL_USER]), async (req, res) => controller.lastNotice(req, res));
 
   router.put(`${URL_BASE}/:id`, auth([role.type.ADMIN]), async (req, res) => controller.update(req, res));
   router.get(`${URL_BASE}/:id`, auth([role.type.ADMIN]), async (req, res) => controller.findById(req, res));
