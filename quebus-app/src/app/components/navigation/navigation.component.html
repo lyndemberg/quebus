@@ -12,9 +12,9 @@
           </a>
         </li>
         <li *ngIf="usuario.roles.includes('ADMIN')">
-          <a [routerLink]="['/gerenciarobservacao']">
+          <a [routerLink]="['/gerenciaravisos']">
             <i class="material-icons left">add_alert</i>
-            Gerenciar observação
+            Gerenciar avisos
           </a>
         </li>
         <li><a [routerLink]="['/minhasperguntas']"><i class="material-icons left">list</i>Minhas perguntas</a></li>
@@ -46,9 +46,9 @@
       </a>
     </li>
     <li *ngIf="usuario.roles.includes('ADMIN')">
-      <a [routerLink]="['/gerenciarobservacao']" (click)="fecharSideNav()">
+      <a [routerLink]="['/gerenciaravisos']" (click)="fecharSideNav()">
         <i class="material-icons left">add_alert</i>
-        Gerenciar observação
+        Gerenciar avisos
       </a>
     </li>
     <li><a [routerLink]="['/minhasperguntas']" (click)="fecharSideNav()"><i class="material-icons left">list</i>Minhas perguntas</a></li>

@@ -21,7 +21,7 @@ import { TokenInterceptor } from './core/interceptors/token.inteceptor';
     AppRoutingModule,
     MaterializeModule,
     ToastrModule.forRoot(),
-    NgxLoadingModule.forRoot({}),
+    // NgxLoadingModule.forRoot({}),
     HttpClientModule,
     PagesModule
   ],

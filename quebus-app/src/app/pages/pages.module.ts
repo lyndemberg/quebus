@@ -10,13 +10,14 @@ import { ComponentsModule } from '../components/components.module';
 import { CadastroPerguntaComponent } from './cadastro-pergunta/cadastro-pergunta.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { GerenciarObservacaoComponent } from './gerenciar-observacao/gerenciar-observacao.component';
+import { GerenciarAvisosComponent } from './gerenciar-avisos/gerenciar-avisos.component';
 import { MinhasPerguntasComponent } from './minhas-perguntas/minhas-perguntas.component';
 import { MinhasRespostasComponent } from './minhas-respostas/minhas-respostas.component';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { PerguntaDetailsComponent } from './pergunta-details/pergunta-details.component';
 import { NgxLoadingModule } from 'ngx-loading';
+import { CadastroAvisoComponent } from './cadastro-aviso/cadastro-aviso.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +27,12 @@ import { NgxLoadingModule } from 'ngx-loading';
     GerenciarUsuariosComponent,
     CadastroPerguntaComponent,
     PageNotFoundComponent,
-    GerenciarObservacaoComponent,
+    GerenciarAvisosComponent,
     MinhasPerguntasComponent,
     MinhasRespostasComponent,
     CadastroUsuarioComponent,
-    PerguntaDetailsComponent
+    PerguntaDetailsComponent,
+    CadastroAvisoComponent
   ],
   imports: [
     CommonModule,

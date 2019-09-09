@@ -24,7 +24,7 @@ export class MinhasPerguntasComponent implements OnInit {
         (response) => {
           this.perguntaList = response.body.data;
         }, (error) => {
-          toast('Não foi possível listar suas perguntas');
+          toast('Não foi possível listar suas perguntas', 2000);
         }
       );
   }

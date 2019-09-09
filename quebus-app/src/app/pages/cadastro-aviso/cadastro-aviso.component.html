@@ -1,0 +1,21 @@
+<br>
+<div class="container">
+  <div class="row">
+    <h5 class="center-align">Cadastro de aviso</h5>
+  </div>
+  <form [formGroup]="formGroupAviso" (ngSubmit)="cadastrar()">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">description</i>
+        <textarea id="descricao" formControlName="message" class="materialize-textarea"></textarea>
+        <label for="descricao">Mensagem</label>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn waves-effect waves-light col s10 offset-s1 btn-large primary-color"
+        [disabled]="!formGroupAviso.valid" type="submit">
+        <i class="material-icons left">add_alert</i> Cadastrar aviso
+      </button>
+    </div>
+  </form>
+</div>
