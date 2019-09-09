@@ -70,7 +70,7 @@ module.exports = (api) => {
     delete: async (req, res) => {
       try {
         await service.delete(req.params.id);
-        res.status(httpStatusCode.NO_CONTENT);
+        res.status(httpStatusCode.NO_CONTENT).send();
       } catch (error) {
         res.status(httpStatusCode.NOT_FOUND)
           .json({
