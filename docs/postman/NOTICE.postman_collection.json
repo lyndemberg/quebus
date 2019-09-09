@@ -198,6 +198,35 @@
 				"description": "Busca uma questão filtrando por parâmetros"
 			},
 			"response": []
+		},
+		{
+			"name": "getLast",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v1/notice/last",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"notice",
+						"last"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"event": [
