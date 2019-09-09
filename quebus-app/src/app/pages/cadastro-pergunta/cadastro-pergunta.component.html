@@ -1,1 +1,28 @@
-<p>cadastro-pergunta works!</p>
+<br>
+<div class="container">
+  <div class="row">
+    <h5 class="center-align">Nova pergunta</h5>
+  </div>
+  <form [formGroup]="formCadastroPergunta" (ngSubmit)="cadastrar()">
+    <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">title</i>
+          <input id="titulo" type="text" formControlName="title" class="validate">
+          <label for="titulo">Título</label>
+        </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">description</i>
+        <textarea id="descricao" formControlName="description" class="materialize-textarea"></textarea>
+        <label for="descricao">Descrição</label>
+      </div>
+    </div>
+    <div class="row">
+      <button class="btn waves-effect waves-light col s10 offset-s1 btn-large primary-color"
+        [disabled]="!formCadastroPergunta.valid" type="submit">
+        <i class="material-icons left">open_in_new</i> Fazer pergunta
+      </button>
+    </div>
+  </form>
+</div>

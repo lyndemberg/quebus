@@ -14,6 +14,7 @@ export class RouteGuard implements CanActivate {
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     const usuarioLogado = this.usuarioStorage.recuperarUsuarioLocal();
     if (usuarioLogado) { return true; }
+    this.router.navigate(['/login']);
     return false;
   }
 }

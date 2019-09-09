@@ -15,6 +15,8 @@ import { MinhasPerguntasComponent } from './minhas-perguntas/minhas-perguntas.co
 import { MinhasRespostasComponent } from './minhas-respostas/minhas-respostas.component';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { PerguntaDetailsComponent } from './pergunta-details/pergunta-details.component';
+import { NgxLoadingModule } from 'ngx-loading';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     GerenciarObservacaoComponent,
     MinhasPerguntasComponent,
     MinhasRespostasComponent,
-    CadastroUsuarioComponent
+    CadastroUsuarioComponent,
+    PerguntaDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -35,6 +38,8 @@ import { NgSelectModule } from '@ng-select/ng-select';
     ReactiveFormsModule,
     PagesRoutingModule,
     NgSelectModule
+  ],
+  providers: [
   ],
   bootstrap: [LoginComponent]
 })

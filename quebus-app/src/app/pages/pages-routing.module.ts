@@ -11,6 +11,8 @@ import { MinhasPerguntasComponent } from './minhas-perguntas/minhas-perguntas.co
 import { MinhasRespostasComponent } from './minhas-respostas/minhas-respostas.component';
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { RouteGuard } from '../core/guards/route.guard';
+import { CadastroPerguntaComponent } from './cadastro-pergunta/cadastro-pergunta.component';
+import { PerguntaDetailsComponent } from './pergunta-details/pergunta-details.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -25,6 +27,8 @@ const routes: Routes = [
       { path: 'gerenciarobservacao', component: GerenciarObservacaoComponent },
       { path: 'minhasperguntas', component: MinhasPerguntasComponent },
       { path: 'minhasrespostas', component: MinhasRespostasComponent },
+      { path: 'cadastropergunta', component: CadastroPerguntaComponent },
+      { path: 'pergunta/:id', component: PerguntaDetailsComponent },
     ]
   },
 

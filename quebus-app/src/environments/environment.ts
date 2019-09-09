@@ -4,9 +4,10 @@
 
 export const environment = {
   production: false,
-  urlBaseApi: 'http://localhost:3000/quebus',
+  urlBaseApi: 'https://quebus.herokuapp.com/quebus',
   authPath: '/v1/user/auth',
-  usuarioPath: '/v1/user'
+  usuarioPath: '/v1/user',
+  perguntaPath: '/v1/question'
 };
 
 /*
