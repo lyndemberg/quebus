@@ -9,7 +9,7 @@ module.exports = (api) => {
 
     findById: async (id) => genericRepository.findById(id),
 
-    lastNotice: async () => Notice.find({}).sort('-_id').limit(1),
+    lastNotice: async () => Notice.findOne({}).sort('-_id').limit(1),
 
     update: async (notice) => genericRepository.update(notice),
 
