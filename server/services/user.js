@@ -15,7 +15,7 @@ module.exports = (api) => {
       }
 
       const token = jwt.sign({ id: user._id, roles: user.roles }, JWT_SECRET, {
-        expiresIn: JWT_EXPIRES_IN,
+        expiresIn: Number.parseInt(JWT_EXPIRES_IN),
       });
 
       user.password = undefined;
