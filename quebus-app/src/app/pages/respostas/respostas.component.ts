@@ -4,6 +4,8 @@ import { PerguntaService } from 'src/app/core/services/pergunta.service';
 import { ActivatedRoute } from '@angular/router';
 import { toast } from 'angular2-materialize';
 import { Subscription } from 'rxjs';
+import { UsuarioService } from 'src/app/core/services/usuario.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-respostas',
@@ -14,6 +16,9 @@ export class RespostasComponent implements OnInit, OnDestroy {
 
   pergunta: Pergunta = new Pergunta();
   private subscriptions: Subscription[] = [];
+  formGroupResposta: FormGroup = new FormGroup({
+
+  });
 
   constructor(private perguntaService: PerguntaService,
               private activatedRoute: ActivatedRoute) { }

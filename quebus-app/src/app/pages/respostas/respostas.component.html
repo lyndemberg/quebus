@@ -22,5 +22,24 @@
     <div class="row">
       <h5>Respostas</h5>
 
+      <form>
+        <div class="row">
+          <div class="input-field col s9">
+            <i class="material-icons prefix">comment</i>
+            <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+            <label for="icon_prefix2">First Name</label>
+          </div>
+        </div>
+      </form>
+
+      <ul class="collection">
+          <li class="collection-item avatar" *ngFor="let resposta of pergunta.comments">
+            <div class="circle primary-color"></div>
+            <span class="title">{{resposta.user.name}}</span>
+            <p>
+              {{resposta.comment}}
+            </p>
+          </li>
+      </ul>
     </div>
 </div>
