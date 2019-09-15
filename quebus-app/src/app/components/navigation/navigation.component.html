@@ -18,7 +18,6 @@
           </a>
         </li>
         <li><a [routerLink]="['/minhasperguntas']"><i class="material-icons left">list</i>Minhas perguntas</a></li>
-        <li><a [routerLink]="['/minhasrespostas']"><i class="material-icons left">question_answer</i>Minhas respostas</a></li>
         <li><a (click)="sair()"><i class="material-icons left">exit_to_app</i>Sair</a></li>
       </ul>
     </div>
@@ -31,7 +30,7 @@
         </div>
         <div class="circle" style="background-color:blue;">
           <div class="valign-wrapper" style="width:100%; height: 100%; font-size:14pt; font-weight: bolder;">
-            <span>{{textIcon}}</span>
+            <!-- <span>{{textIcon}}</span> -->
           </div>
         </div>
         <a href="#!name"><span class="white-text name">{{usuario.name}}</span></a>
@@ -52,6 +51,5 @@
       </a>
     </li>
     <li><a [routerLink]="['/minhasperguntas']" (click)="fecharSideNav()"><i class="material-icons left">list</i>Minhas perguntas</a></li>
-    <li><a [routerLink]="['/minhasrespostas']" (click)="fecharSideNav()"><i class="material-icons left">question_answer</i>Minhas respostas</a></li>
     <li><a (click)="sair()"><i class="material-icons left">exit_to_app</i>Sair</a></li>
   </ul>

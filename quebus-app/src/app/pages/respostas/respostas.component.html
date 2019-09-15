@@ -22,15 +22,18 @@
     <div class="row">
       <h5>Respostas</h5>
 
-      <form>
+      <form [formGroup]="formGroupResposta">
         <div class="row">
-          <div class="input-field col s9">
+          <div class="input-field col s12">
             <i class="material-icons prefix">comment</i>
-            <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-            <label for="icon_prefix2">First Name</label>
+            <textarea id="resposta" class="materialize-textarea"></textarea>
+            <label for="resposta">Sua resposta</label>
           </div>
-          <div class="col s3">
-              <button type="submit" class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>Responder</button>
+        </div>
+        <div class="row">
+          <div class="col s12 center-align">
+            <button type="submit" [disabled]="!formGroupResposta.valid"
+              class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>Responder</button>
           </div>
         </div>
       </form>
