@@ -40,9 +40,7 @@ export class GerenciarAvisosComponent implements OnInit, OnDestroy {
     this.subscriptions.push(
       this.avisoService.deletar(id).subscribe(
         (response) => {
-          console.log('antes ==> ', this.avisoList.length);
           this.avisoList = this.avisoList.filter(aviso => aviso._id !== id);
-          console.log('depois ==> ', this.avisoList.length);
           toast('Aviso removido com sucesso', 3000);
         }, (error) => {
           toast('Não foi possível remover o aviso', 3000);
