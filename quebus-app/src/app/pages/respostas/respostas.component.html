@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+      <br>
+      <div class="col s12">
+          <a [routerLink]="['/paginainicial']"  class="waves-effect waves-light btn"><i class="material-icons left">keyboard_arrow_left</i>Voltar</a>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">{{pergunta.title}}</span>
+          <p>{{pergunta.description}}</p>
+        </div>
+        <div class="card-action">
+          <hr>
+          <a href="#" class="waves-effect waves-teal btn-flat black-text"><i class="medium material-icons left">account_circle</i> Feita por <b>{{pergunta.user.name}}</b></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <h5>Respostas</h5>
+
+    </div>
+</div>

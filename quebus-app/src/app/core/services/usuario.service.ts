@@ -21,6 +21,10 @@ export class UsuarioService {
     return this.http.post(this.URL_RESOURCE, usuario, { observe: 'response'} );
   }
 
+  buscarPorId(id: string): Observable<HttpResponse<any>> {
+    return this.http.get(`${this.URL_RESOURCE}/id`, { observe: 'response' });
+  }
+
   deletar(id: string): Observable<HttpResponse<any>> {
     return this.http.delete(`${this.URL_RESOURCE}/${id}`, { observe: 'response' });
   }

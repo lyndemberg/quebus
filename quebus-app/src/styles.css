@@ -10,3 +10,6 @@ html, body, .my-wrapper {
   border-width: 1px;
   border-color: #3d5367 !important;
 }
+body {
+  background-color: #eceff1
+}
