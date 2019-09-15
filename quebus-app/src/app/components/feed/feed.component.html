@@ -4,7 +4,7 @@
 <div class="row">
   <div class="card" *ngFor="let pergunta of perguntaList">
     <div class="card-image">
-      <a class="btn-floating halfway-fab waves-effect waves-light blue-grey darken-2"><i class="material-icons">comment</i></a>
+      <a [routerLink]="['/respostas', pergunta._id]" class="btn-floating halfway-fab waves-effect waves-light blue-grey darken-2"><i class="material-icons">comment</i></a>
     </div>
     <div class="card-content">
       <span class="card-title">{{pergunta.title}}</span>
@@ -12,7 +12,7 @@
     </div>
     <div class="card-action">
       <hr>
-      <a [routerLink]="['/respostas', pergunta._id]" class="waves-effect waves-teal btn-flat black-text"><i class="medium material-icons left">account_circle</i> Feita por <b>{{pergunta.user.name}}</b></a>
+      <a href="#" class="waves-effect waves-teal btn-flat black-text"><i class="medium material-icons left">account_circle</i> Feita por <b>{{pergunta.user.name}}</b></a>
     </div>
   </div>
 </div>

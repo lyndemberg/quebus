@@ -15,7 +15,6 @@ import { MinhasPerguntasComponent } from './minhas-perguntas/minhas-perguntas.co
 import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { PerguntaDetailsComponent } from './pergunta-details/pergunta-details.component';
-import { NgxLoadingModule } from 'ngx-loading';
 import { CadastroAvisoComponent } from './cadastro-aviso/cadastro-aviso.component';
 import { RespostasComponent } from './respostas/respostas.component';
 
