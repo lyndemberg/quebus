@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Pergunta } from 'src/app/model/pergunta.model';
+import { Pergunta, PerguntaRequest } from 'src/app/model/pergunta.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -13,7 +13,7 @@ export class PerguntaService {
 
   constructor(private http: HttpClient) { }
 
-  cadastrar(pergunta: Pergunta): Observable<HttpResponse<any>> {
+  cadastrar(pergunta: PerguntaRequest): Observable<HttpResponse<any>> {
     return this.http.post(this.URL_RESOURCE, pergunta, { observe: 'response'} );
   }
 
