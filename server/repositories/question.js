@@ -5,7 +5,10 @@ module.exports = (api) => {
   const questionRepository = {
     save: async (question) => genericRepository.save(question),
 
-    find: async (query = {}) => genericRepository.find(query),
+    find: async (query = {}) => Question.find(query)
+      .populate('user')
+      .populate('comments.user')
+      .populate('comments.evaluation.user'),
 
     findById: async (id) => genericRepository.findById(id),
 

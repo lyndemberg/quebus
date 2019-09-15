@@ -5,7 +5,7 @@ module.exports = (api) => {
   const noticeRepository = {
     save: async (notice) => genericRepository.save(notice),
 
-    find: async (query = {}) => Notice.find(query).sort('-_id'),
+    find: async (query = {}) => Notice.find(query).populate('user').sort('-_id'),
 
     findById: async (id) => genericRepository.findById(id),
 
