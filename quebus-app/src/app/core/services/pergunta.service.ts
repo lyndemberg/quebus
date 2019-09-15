@@ -24,4 +24,8 @@ export class PerguntaService {
   listarPerguntasPorUsuario(idUsuario: string): Observable<HttpResponse<any>> {
     return this.http.get(`${this.URL_RESOURCE}?user=${idUsuario}`, { observe: 'response' } );
   }
+
+  listarTodas(): Observable<HttpResponse<any>> {
+    return this.http.get(`${this.URL_RESOURCE}`, { observe: 'response' });
+  }
 }
