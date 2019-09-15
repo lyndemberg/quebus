@@ -7,9 +7,9 @@ module.exports = (api) => {
 
     find: async (query = {}) => Notice.find(query).populate('user').sort('-_id'),
 
-    findById: async (id) => genericRepository.findById(id),
+    findById: async (id) => Notice.findById(id).populate('user').sort('-_id'),
 
-    lastNotice: async () => Notice.findOne({}).sort('-_id').limit(1),
+    lastNotice: async () => Notice.findOne({}).populate('user').sort('-_id').limit(1),
 
     update: async (notice) => genericRepository.update(notice),
 
