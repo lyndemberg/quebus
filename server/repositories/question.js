@@ -47,7 +47,7 @@ module.exports = (api) => {
 
     updateComment: async (idQuestion, idComment, comment) => Question.updateOne(
       { _id: idQuestion, 'comments._id': idComment },
-      { $set: { 'comments.$.comment': comment.comment } },
+      { $set: { comments: comment } },
       {
         safe: true,
         runValidators: true,
