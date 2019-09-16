@@ -16,8 +16,8 @@ module.exports = (api) => {
   router.delete(`${URL_BASE}/:id`, auth([role.type.NORMAL_USER, role.type.ADMIN]), async (req, res) => controller.delete(req, res));
 
   router.post(`${URL_BASE}/:id/comments`, auth([role.type.NORMAL_USER, role.type.ADMIN]), async (req, res) => controller.addComments(req, res));
-
   router.put(`${URL_BASE}/:idQuestion/comments/:idComment`, auth([role.type.NORMAL_USER, role.type.ADMIN]), async (req, res) => controller.updateComment(req, res));
+  router.delete(`${URL_BASE}/:idQuestion/comments/:idComment`, auth([role.type.NORMAL_USER, role.type.ADMIN]), async (req, res) => controller.removeComment(req, res));
 
   api.use(router);
 };

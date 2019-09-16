@@ -53,6 +53,15 @@ module.exports = (api) => {
         runValidators: true,
       },
     ),
+
+    removeComment: async (idQuestion, idComment) => Question.updateOne(
+      { _id: idQuestion },
+      { $pull: { comments: { _id: idComment } } },
+      {
+        safe: true,
+        runValidators: true,
+      },
+    ),
   };
 
   return questionRepository;

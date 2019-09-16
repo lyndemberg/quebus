@@ -98,6 +98,19 @@ module.exports = (api) => {
           });
       }
     },
+
+
+    removeComment: async (req, res) => {
+      try {
+        await service.removeComment(req.params.idQuestion, req.params.idComment);
+        res.status(httpStatusCode.NO_CONTENT).send();
+      } catch (error) {
+        res.status(httpStatusCode.NOT_FOUND)
+          .json({
+            message: error.message, status: httpStatusCode.NOT_FOUND,
+          });
+      }
+    },
   };
 
   return controller;
