@@ -22,5 +22,30 @@
     <div class="row">
       <h5>Respostas</h5>
 
+      <form [formGroup]="formGroupResposta">
+        <div class="row">
+          <div class="input-field col s12">
+            <i class="material-icons prefix">comment</i>
+            <textarea id="resposta" class="materialize-textarea"></textarea>
+            <label for="resposta">Sua resposta</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12 center-align">
+            <button type="submit" [disabled]="!formGroupResposta.valid"
+              class="waves-effect waves-light btn-large"><i class="material-icons left">cloud</i>Responder</button>
+          </div>
+        </div>
+      </form>
+
+      <ul class="collection">
+          <li class="collection-item avatar" *ngFor="let resposta of pergunta.comments">
+            <div class="circle primary-color"></div>
+            <span class="title">{{resposta.user.name}}</span>
+            <p>
+              {{resposta.comment}}
+            </p>
+          </li>
+      </ul>
     </div>
 </div>
