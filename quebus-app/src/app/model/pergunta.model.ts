@@ -6,7 +6,7 @@ export class PerguntaRequest {
       public _id?: string,
       public title?: string,
       public description?: string,
-      public user?: Usuario
+      public user?: string
   ) {}
 }
 

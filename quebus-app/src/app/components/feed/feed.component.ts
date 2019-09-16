@@ -3,6 +3,7 @@ import { Pergunta } from 'src/app/model/pergunta.model';
 import { PerguntaService } from 'src/app/core/services/pergunta.service';
 import { Subscription } from 'rxjs';
 import { toast } from 'angular2-materialize';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-feed',
@@ -15,6 +16,7 @@ export class FeedComponent implements OnInit {
   private subscription: Subscription;
 
   constructor(private perguntaService: PerguntaService,
+              private router: Router,
               private el: ElementRef) { }
 
   ngOnInit() {
@@ -26,8 +28,6 @@ export class FeedComponent implements OnInit {
           toast('Não foi possível listar o feed', 2000);
         }
       );
-
-    ($(this.el.nativeElement) as any).find('.collapsible').collapsible();
   }
 
 }

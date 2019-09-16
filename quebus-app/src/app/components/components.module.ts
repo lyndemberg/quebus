@@ -3,19 +3,18 @@ import { CommonModule } from '@angular/common';
 import { NavigationComponent } from './navigation/navigation.component';
 import { RouterModule } from '@angular/router';
 import { UsuarioListComponent } from './usuario-list-component/usuario-list-component.component';
-import { PerguntaComponent } from './pergunta/pergunta.component';
 import { FeedComponent } from './feed/feed.component';
 
 
 
 @NgModule({
-  declarations: [NavigationComponent, UsuarioListComponent, PerguntaComponent, FeedComponent],
+  declarations: [NavigationComponent, UsuarioListComponent, FeedComponent],
   imports: [
     CommonModule,
     RouterModule
   ],
   exports: [
-    NavigationComponent, UsuarioListComponent, PerguntaComponent, FeedComponent
+    NavigationComponent, UsuarioListComponent, FeedComponent
   ]
 })
 export class ComponentsModule { }

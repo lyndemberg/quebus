@@ -14,7 +14,8 @@
         </div>
         <div class="card-action">
           <hr>
-          <a href="#" class="waves-effect waves-teal btn-flat black-text"><i class="medium material-icons left">account_circle</i> Feita por <b>{{pergunta.user.name}}</b></a>
+          <a href="#" class="waves-effect waves-teal btn-flat black-text"><i class="medium material-icons left">account_circle</i>
+            Feita por <b *ngIf="pergunta.user != null">{{pergunta.user.name}}</b></a>
         </div>
       </div>
     </div>
@@ -22,11 +23,11 @@
     <div class="row">
       <h5>Respostas</h5>
 
-      <form [formGroup]="formGroupResposta">
+      <form [formGroup]="formGroupResposta" (ngSubmit)="adicionarResposta()">
         <div class="row">
           <div class="input-field col s12">
             <i class="material-icons prefix">comment</i>
-            <textarea id="resposta" class="materialize-textarea"></textarea>
+            <textarea id="resposta" formControlName="comment" class="materialize-textarea"></textarea>
             <label for="resposta">Sua resposta</label>
           </div>
         </div>
