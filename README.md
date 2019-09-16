@@ -68,7 +68,24 @@ Materialize é um framework Front-End que resolve os mesmos problemas, mas, clar
 </div>
  
 ## Implantação
-TODO
+
+### Implantação do back/end
+
+Para iniciar o back-end em desenvolvimento, execute o arquivo **_run.sh_** na pasta raiz do server:
+
+`./run.sh`
+
+### Implantação do front/end
+
+Para a implantação do sistemas os comandos a seguir devem ser executados na pasta raiz do front-end (quebus-app): 
+
+- Em desenvolvimento:
+
+    `ng serve --configuration=dev --open`
+
+- Fazer build em produção:
+
+    `ng build --prod`
 
 
 ## Contribuidores
