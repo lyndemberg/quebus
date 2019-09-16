@@ -26,8 +26,8 @@ O sistema QUEBUS é um sistema para questões de trabalho, como buscar respostas
 Para auxiliar no desenvolvimento da aplicação elgumas ferramentas serão utilizadas, sendo elas utilizadas para odesenvovlimento do Front e do Back-End:
 #### Lista de Ferramentas logo abaixo:
 
-- **Back-End** -Nodejs, express.
-- **Front-End** - Angular, Materialize.
+- **Back-End** -Nodejs, express, Mongoose e Docker.
+- **Front-End** - Angular e Materialize.
 
 **1 - Node** 
 
@@ -45,7 +45,25 @@ O Node.js pode ser definido como um ambiente de execução Javascript server-sid
 
 O Express é um framework para aplicativo da web do Node.js mínimo e flexível que fornece um conjunto robusto de recursos para aplicativos web e móvel.
 
-**3 - Angular**
+**3 - Mongoose**
+
+<div align="center">
+    <img src="https://pbs.twimg.com/profile_images/946432748276740096/0TXzZU7W.jpg" width="250" height="200">
+</div>
+
+Mongoose é uma biblioteca do Nodejs que proporciona uma solução baseada em esquemas para modelar os dados da sua aplicação. Ele possui sistema de conversão de tipos, validação, criação de consultas e hooks para lógica de negócios. Mongoose fornece um mapeamento de objetos do MongoDB similar ao ORM (Object Relational Mapping), ou ODM (Object Data Mapping) no caso do Mongoose. Isso significa que o Mongoose traduz os dados do banco de dados para objetos JavaScript para que possam ser utilizados por sua aplicação.
+
+**4 - Docker**
+
+<div align="center">
+    <img src="https://miro.medium.com/max/630/1*j_zP74-cpvXRcs8dM_pkMQ.jpeg" width="250" height="200">
+</div>
+
+**Docker:** é uma tecnologia de software que fornece contêineres, promovido pela empresa Docker, Inc. O Docker fornece uma camada adicional de abstração e automação de virtualização de nível de sistema operacional no Windows e no Linux. O Docker usa as características de isolamento de recurso do núcleo do Linux como cgroups e espaços de nomes do núcleo, e um sistema de arquivos com recursos de união, como OverlayFS e outros para permitir "contêineres" independentes para executar dentro de uma única instância Linux, evitando a sobrecarga de iniciar e manter máquinas virtuais (VMs).
+
+**Docker Compose:** é o orquestrador de containers da Docker. E como funciona um orquestrador em uma orquestra? Ele rege como uma banda deve se comportar/tocar durante uma determinada apresentação ou música. Com o Docker Compose é a mesma coisa, mas os maestros somos nós! Nós que iremos reger esse comportamento através do arquivo chamado docker-compose, semelhante ao Dockerfile, escrito em YAML (acrônimo recursivo para YAML Ain’t Markup Language) é um formato de codificação de dados legíveis por humanos, o que torna fácil de ler e entender o que um Compose faz!
+
+**5 - Angular**
 
 <div align="center">
     <img src="https://miro.medium.com/max/4583/1*P7x-_0XfQz6CVmMY_QAv0w.png" width="250" height="150">
@@ -53,7 +71,7 @@ O Express é um framework para aplicativo da web do Node.js mínimo e flexível 
 
 AngularJS é um framework JavaScript código aberto, mantido pelo Google, que auxilia na execução de single-page applications. Seu objetivo é aumentar aplicativos que podem ser acessados por um navegador web, foi construído sob o padrão model-view-view-model (MVVM), em um esforço para facilitar tanto o desenvolvimento quanto o teste dos aplicativos.
 
-**4 - Materialize**
+**6 - Materialize**
 
 <div align="center">
     <img src="https://cdn.nearsoft.com/uploads/2016/11/how-to-center-your-content-with-materialize-top-800x318.png" width="250" height="150">
@@ -68,7 +86,24 @@ Materialize é um framework Front-End que resolve os mesmos problemas, mas, clar
 </div>
  
 ## Implantação
-TODO
+
+### Implantação do back/end
+
+Para iniciar o back-end em desenvolvimento, execute o arquivo **_run.sh_** na pasta raiz do server:
+
+`./run.sh`
+
+### Implantação do front/end
+
+Para a implantação do sistemas os comandos a seguir devem ser executados na pasta raiz do front-end (quebus-app): 
+
+- Em desenvolvimento:
+
+    `ng serve --configuration=dev --open`
+
+- Fazer build em produção:
+
+    `ng build --prod`
 
 
 ## Contribuidores
