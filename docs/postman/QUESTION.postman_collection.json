@@ -29,7 +29,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"title\": \"Segunda questão\",\n\t\"description\": \"Descrição da segunda questão\",\n\t\"user\": \"5d705425e2adc605f8c5f0b5\"\n}"
+					"raw": "{\n\t\"title\": \"Primeira questão\",\n\t\"description\": \"Descrição da primeira questão\",\n\t\"user\": \"5d74bdab96974118bcc679fe\"\n}"
 				},
 				"url": {
 					"raw": "{{url}}/v1/question",
@@ -120,14 +120,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/v1/question/5d7060e131b9001519bdef67",
+					"raw": "{{url}}/v1/question/5d7c7aa4868aff0641d98e16",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"v1",
 						"question",
-						"5d7060e131b9001519bdef67"
+						"5d7c7aa4868aff0641d98e16"
 					]
 				},
 				"description": "Buscar um usuário pelo ID"
@@ -180,7 +180,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/v1/question?user=5d705425e2adc605f8c5f0b5",
+					"raw": "{{url}}/v1/question?user=5d74bdab96974118bcc679fe",
 					"host": [
 						"{{url}}"
 					],
@@ -191,11 +191,52 @@
 					"query": [
 						{
 							"key": "user",
-							"value": "5d705425e2adc605f8c5f0b5"
+							"value": "5d74bdab96974118bcc679fe"
 						}
 					]
 				},
 				"description": "Busca uma questão filtrando por parâmetros"
+			},
+			"response": []
+		},
+		{
+			"name": "addComments",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n\t{},\n\t{\n\t\t\"comment\": \"teste\",\n\t\t\"user\": \"5d74bdab96974118bcc679fe\"\n\t}\n]"
+				},
+				"url": {
+					"raw": "{{url}}/v1/question/5d7c7aa4868aff0641d98e16/comments",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v1",
+						"question",
+						"5d7c7aa4868aff0641d98e16",
+						"comments"
+					]
+				}
 			},
 			"response": []
 		}

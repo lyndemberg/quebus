@@ -29,7 +29,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n\t\"message\": \"Segunda notícia\",\n\t\"user\": \"5d74bdab96974118bcc679fe\"\n}"
+					"raw": "{\n\t\"message\": \"Quinta notícia\",\n\t\"user\": \"5d74bdab96974118bcc679fe\"\n}"
 				},
 				"url": {
 					"raw": "{{url}}/v1/notice",
@@ -120,14 +120,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/v1/notice/5d7060e131b9001519bdef67",
+					"raw": "{{url}}/v1/notice/5d7c7a79868aff0641d98e15",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"v1",
 						"notice",
-						"5d7060e131b9001519bdef67"
+						"5d7c7a79868aff0641d98e15"
 					]
 				},
 				"description": "Buscar um usuário pelo ID"
@@ -147,17 +147,17 @@
 						}
 					]
 				},
-				"method": "GET",
+				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/v1/notice/5d61adfcee51c8002c9426da",
+					"raw": "{{url}}/v1/notice/5d76b366c2259f06e7751875",
 					"host": [
 						"{{url}}"
 					],
 					"path": [
 						"v1",
 						"notice",
-						"5d61adfcee51c8002c9426da"
+						"5d76b366c2259f06e7751875"
 					]
 				},
 				"description": "Deletar um usuário pelo ID"
@@ -180,7 +180,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/v1/notice?message=Primeira notícia",
+					"raw": "{{url}}/v1/notice?message=Quinta notícia",
 					"host": [
 						"{{url}}"
 					],
@@ -191,7 +191,7 @@
 					"query": [
 						{
 							"key": "message",
-							"value": "Primeira notícia"
+							"value": "Quinta notícia"
 						}
 					]
 				},

@@ -19,16 +19,28 @@ module.exports = (api) => {
 
     delete: async (id) => genericRepository.delete(id),
 
-    // addComments: async (id, ...comments = []) => {
+    addComments: async (id, comments) => {
+      const err = new Error('No comments');
 
-    //   if (comments.length == 0) {
-    //     throw new Error('No comments');
-    //   }
-    //   Question.update(
-    //     { _id: id },
-    //     {}
-    //   )
-    // }
+      if ((Array.isArray(comments) && comments.length === 0)
+        || (!Array.isArray(comments) && Object.entries(comments).length === 0)) {
+        throw err;
+      }
+
+      if (Array.isArray(comments)) {
+        comments = comments.filter((c) => Object.entries(c).length > 0);
+
+        if (comments.length === 0) {
+          throw err;
+        }
+      }
+
+      return Question.updateOne(
+        { _id: id },
+        { $push: { comments } },
+        { safe: true },
+      );
+    },
   };
 
   return questionRepository;
