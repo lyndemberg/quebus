@@ -14,7 +14,8 @@
         </div>
         <div class="card-action">
           <hr>
-          <a href="#" class="waves-effect waves-teal btn-flat black-text"><i class="medium material-icons left">account_circle</i> Feita por <b>{{pergunta.user.name}}</b></a>
+          <a href="#" class="waves-effect waves-teal btn-flat black-text"><i class="medium material-icons left">account_circle</i>
+            Feita por <b *ngIf="pergunta.user != null">{{pergunta.user.name}}</b></a>
         </div>
       </div>
     </div>
