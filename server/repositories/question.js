@@ -38,9 +38,21 @@ module.exports = (api) => {
       return Question.updateOne(
         { _id: id },
         { $push: { comments } },
-        { safe: true },
+        {
+          safe: true,
+          runValidators: true,
+        },
       );
     },
+
+    updateComment: async (idQuestion, idComment, comment) => Question.updateOne(
+      { _id: idQuestion, 'comments._id': idComment },
+      { $set: { 'comments.$.comment': comment.comment } },
+      {
+        safe: true,
+        runValidators: true,
+      },
+    ),
   };
 
   return questionRepository;

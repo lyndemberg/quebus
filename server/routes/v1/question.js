@@ -17,5 +17,7 @@ module.exports = (api) => {
 
   router.post(`${URL_BASE}/:id/comments`, auth([role.type.NORMAL_USER, role.type.ADMIN]), async (req, res) => controller.addComments(req, res));
 
+  router.put(`${URL_BASE}/:idQuestion/comments/:idComment`, auth([role.type.NORMAL_USER, role.type.ADMIN]), async (req, res) => controller.updateComment(req, res));
+
   api.use(router);
 };
