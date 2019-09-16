@@ -31,6 +31,6 @@ export class PerguntaService {
   }
 
   addResposta(idPergunta: string, resposta: Resposta): Observable<HttpResponse<any>> {
-    return this.http.post(`${this.URL_RESOURCE}/${idPergunta}`, resposta, { observe: 'response' });
+    return this.http.post(`${this.URL_RESOURCE}/${idPergunta}/comments`, resposta, { observe: 'response' });
   }
 }

@@ -64,6 +64,7 @@ export class RespostasComponent implements OnInit, OnDestroy {
           this.toastr.success('', 'Resposta salva com sucesso!');
           this.router.navigate(['/paginainicial']);
         }, error => {
+          console.log(error);
           this.toastr.error('', 'Não foi possível salvar a resposta!');
         })
     );
