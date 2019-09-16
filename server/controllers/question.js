@@ -67,6 +67,21 @@ module.exports = (api) => {
           });
       }
     },
+
+    addComments: async (req, res) => {
+      try {
+        const data = await service.addComments(req.params.id, req.body);
+        res.status(httpStatusCode.OK)
+          .json({
+            message: 'OK', status: httpStatusCode.OK, data,
+          });
+      } catch (error) {
+        res.status(httpStatusCode.BAD_REQUEST)
+          .json({
+            message: error.message, status: httpStatusCode.BAD_REQUEST,
+          });
+      }
+    },
   };
 
   return controller;

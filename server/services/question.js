@@ -11,6 +11,8 @@ module.exports = (api) => {
     update: async (question) => repository.update(question),
 
     delete: async (id) => repository.delete(id),
+
+    addComments: async (id, comments) => repository.addComments(id, comments),
   };
 
   return service;
