@@ -212,7 +212,7 @@
 						}
 					]
 				},
-				"method": "PUT",
+				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
@@ -223,7 +223,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\n\t{},\n\t{\n\t\t\"comment\": \"teste\",\n\t\t\"user\": \"5d74bdab96974118bcc679fe\"\n\t}\n]"
+					"raw": "[\n\t{},\n\t{\n\t\t\"comment\": \"teaaaaaaaaaste\",\n\t\t\"user\": \"5d74bdab96974118bcc679fe\"\n\t}\n]"
 				},
 				"url": {
 					"raw": "{{url}}/v1/question/5d7c7aa4868aff0641d98e16/comments",
