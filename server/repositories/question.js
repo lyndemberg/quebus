@@ -1,3 +1,5 @@
+const mongoose = require('mongoose');
+
 module.exports = (api) => {
   const Question = api.models.question;
   const genericRepository = api.commons.genericRepository(Question);
@@ -19,40 +21,35 @@ module.exports = (api) => {
 
     delete: async (id) => genericRepository.delete(id),
 
-    addComments: async (id, comments) => {
-      const err = new Error('No comments');
+    addComment: async (id, comment) => {
+      const question = await Question.findById(id);
 
-      if ((Array.isArray(comments) && comments.length === 0)
-        || (!Array.isArray(comments) && Object.entries(comments).length === 0)) {
-        throw err;
+      if (!question) {
+        throw new Error('Comment not found');
       }
 
-      if (Array.isArray(comments)) {
-        comments = comments.filter((c) => Object.entries(c).length > 0);
-
-        if (comments.length === 0) {
-          throw err;
-        }
-      }
-
-      return Question.updateOne(
-        { _id: id },
-        { $push: { comments } },
-        {
-          safe: true,
-          runValidators: true,
-        },
-      );
+      question.comments.push(comment);
+      return question.save();
     },
 
-    updateComment: async (idQuestion, idComment, comment) => Question.updateOne(
-      { _id: idQuestion, 'comments._id': idComment },
-      { $set: { comments: comment } },
-      {
-        safe: true,
-        runValidators: true,
-      },
-    ),
+    updateComment: async (idQuestion, idComment, comment) => {
+      const question = await Question.findById(idQuestion);
+
+      let index;
+      question.comments.filter((c, i) => {
+        if (c._id.toString() === idComment) {
+          index = i;
+        }
+        return false;
+      });
+
+      if (!typeof index === 'number' || index < 0) {
+        throw new Error('Comment not found');
+      }
+
+      question.comments[index].comment = comment;
+      question.save();
+    },
 
     removeComment: async (idQuestion, idComment) => Question.updateOne(
       { _id: idQuestion },
@@ -62,6 +59,98 @@ module.exports = (api) => {
         runValidators: true,
       },
     ),
+
+    addEvaluation: async (idQuestion, idComment, evaluation) => {
+      const question = await Question.findById(idQuestion);
+
+      let index;
+      question.comments.filter((c, i) => {
+        if (c._id.toString() === idComment) {
+          index = i;
+        }
+        return false;
+      });
+
+      if (!typeof index === 'number' || index < 0) {
+        throw new Error('Comment not found');
+      }
+
+      question.comments[index].evaluations.push(evaluation);
+      question.save();
+    },
+
+    updateEvaluation: async (idQuestion, idComment, idEvaluation, evaluation) => {
+      const question = await Question.findById(idQuestion);
+
+      let indexComment;
+      question.comments.filter((c, i) => {
+        if (c._id.toString() === idComment) {
+          indexComment = i;
+        }
+        return false;
+      });
+
+      if (!typeof indexComment === 'number' || indexComment < 0) {
+        throw new Error('Comment not found');
+      }
+
+      let indexEvaluation;
+      question.comments[indexComment].evaluations.filter((e, i) => {
+        if (e._id.toString() === idEvaluation) {
+          indexEvaluation = i;
+        }
+        return false;
+      });
+
+      if (!typeof indexEvaluation === 'number' || indexEvaluation < 0) {
+        throw new Error('Evaluation not found');
+      }
+
+      question.comments[indexComment].evaluations[indexEvaluation].evaluation = evaluation;
+
+      const modelValidated = question.validateSync();
+      if (modelValidated) {
+        const error = {
+          error: modelValidated,
+          message: modelValidated.errors[Object.keys(modelValidated.errors)[0]].message,
+        };
+
+        throw error;
+      }
+
+      question.save();
+    },
+
+    removeEvaluation: async (idQuestion, idComment, idEvaluation) => {
+      const question = await Question.findById(idQuestion);
+
+      let indexComment;
+      question.comments.filter((c, i) => {
+        if (c._id.toString() === idComment) {
+          indexComment = i;
+        }
+        return false;
+      });
+
+      if (!typeof indexComment === 'number' || indexComment < 0) {
+        throw new Error('Comment not found');
+      }
+
+      let indexEvaluation;
+      question.comments[indexComment].evaluations.filter((e, i) => {
+        if (e._id.toString() === idEvaluation) {
+          indexEvaluation = i;
+        }
+        return false;
+      });
+
+      if (!typeof indexEvaluation === 'number' || indexEvaluation < 0) {
+        throw new Error('Evaluation not found');
+      }
+
+      question.comments[indexComment].evaluations.splice(indexEvaluation, 1);
+      question.save();
+    },
   };
 
   return questionRepository;

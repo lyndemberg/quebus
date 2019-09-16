@@ -68,17 +68,17 @@ module.exports = (api) => {
       }
     },
 
-    addComments: async (req, res) => {
+    addComment: async (req, res) => {
       try {
-        const data = await service.addComments(req.params.id, req.body);
+        const data = await service.addComment(req.params.id, req.body);
         res.status(httpStatusCode.OK)
           .json({
             message: 'OK', status: httpStatusCode.OK, data,
           });
       } catch (error) {
-        res.status(httpStatusCode.BAD_REQUEST)
+        res.status(httpStatusCode.NOT_FOUND)
           .json({
-            message: error.message, status: httpStatusCode.BAD_REQUEST,
+            message: error.message, status: httpStatusCode.NOT_FOUND,
           });
       }
     },
@@ -86,7 +86,7 @@ module.exports = (api) => {
     updateComment: async (req, res) => {
       try {
         const data = await service
-          .updateComment(req.params.idQuestion, req.params.idComment, req.body);
+          .updateComment(req.params.idQuestion, req.params.idComment, req.body.comment);
         res.status(httpStatusCode.OK)
           .json({
             message: 'OK', status: httpStatusCode.OK, data,
@@ -103,6 +103,48 @@ module.exports = (api) => {
     removeComment: async (req, res) => {
       try {
         await service.removeComment(req.params.idQuestion, req.params.idComment);
+        res.status(httpStatusCode.NO_CONTENT).send();
+      } catch (error) {
+        res.status(httpStatusCode.NOT_FOUND)
+          .json({
+            message: error.message, status: httpStatusCode.NOT_FOUND,
+          });
+      }
+    },
+
+    addEvaluation: async (req, res) => {
+      try {
+        const data = await service.addEvaluation(req.params.idQuestion, req.params.idComment, req.body);
+        res.status(httpStatusCode.OK)
+          .json({
+            message: 'OK', status: httpStatusCode.OK, data,
+          });
+      } catch (error) {
+        res.status(httpStatusCode.BAD_REQUEST)
+          .json({
+            message: error.message, status: httpStatusCode.BAD_REQUEST,
+          });
+      }
+    },
+
+    updateEvaluation: async (req, res) => {
+      try {
+        const data = await service.updateEvaluation(req.params.idQuestion, req.params.idComment, req.params.idEvaluation, req.body.evaluation);
+        res.status(httpStatusCode.OK)
+          .json({
+            message: 'OK', status: httpStatusCode.OK, data,
+          });
+      } catch (error) {
+        res.status(httpStatusCode.BAD_REQUEST)
+          .json({
+            message: error.message, status: httpStatusCode.BAD_REQUEST,
+          });
+      }
+    },
+
+    removeEvaluation: async (req, res) => {
+      try {
+        await service.removeEvaluation(req.params.idQuestion, req.params.idComment, req.params.idEvaluation);
         res.status(httpStatusCode.NO_CONTENT).send();
       } catch (error) {
         res.status(httpStatusCode.NOT_FOUND)

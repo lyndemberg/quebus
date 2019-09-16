@@ -12,13 +12,40 @@ module.exports = (api) => {
 
     delete: async (id) => repository.delete(id),
 
-    addComments: async (id, comments) => repository.addComments(id, comments),
+    addComment: async (id, comment) => {
+      if (!comment) {
+        throw new Error('No comment');
+      }
 
-    updateComment: async (idQuestion, idComment, comment) => repository
-      .updateComment(idQuestion, idComment, comment),
+      return repository.addComment(id, comment);
+    },
+
+    updateComment: async (idQuestion, idComment, comment) => {
+      if (!comment) {
+        throw new Error('No comment');
+      }
+      return repository.updateComment(idQuestion, idComment, comment);
+    },
 
     removeComment: async (idQuestion, idComment) => repository
       .removeComment(idQuestion, idComment),
+
+    addEvaluation: async (idQuestion, idComment, evaluation) => {
+      if (!evaluation) {
+        throw new Error('No evaluation');
+      }
+      return repository.addEvaluation(idQuestion, idComment, evaluation);
+    },
+
+    updateEvaluation: async (idQuestion, idComment, idEvaluation, evaluation) => {
+      if (!evaluation) {
+        throw new Error('No evaluation');
+      }
+      return repository.updateEvaluation(idQuestion, idComment, idEvaluation, evaluation);
+    },
+
+    removeEvaluation: async (idQuestion, idComment, idEvaluation) => repository
+      .removeEvaluation(idQuestion, idComment, idEvaluation),
   };
 
   return service;

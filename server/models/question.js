@@ -29,7 +29,7 @@ module.exports = (api) => {
       ref: 'User',
       required: true,
     },
-    evaluation: [EvaluationSchema],
+    evaluations: [EvaluationSchema],
   });
 
   const QuestionSchema = new Schema({
