@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Pergunta, PerguntaRequest } from 'src/app/model/pergunta.model';
 import { Observable } from 'rxjs';
+import { Resposta } from 'src/app/model/resposta.model';
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,9 @@ export class PerguntaService {
 
   listarTodas(): Observable<HttpResponse<any>> {
     return this.http.get(`${this.URL_RESOURCE}`, { observe: 'response' });
+  }
+
+  addResposta(idPergunta: string, resposta: Resposta): Observable<HttpResponse<any>> {
+    return this.http.post(`${this.URL_RESOURCE}/${idPergunta}`, resposta, { observe: 'response' });
   }
 }
