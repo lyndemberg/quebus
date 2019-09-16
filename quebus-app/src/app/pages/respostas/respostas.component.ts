@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { toast } from 'angular2-materialize';
 import { Subscription } from 'rxjs';
 import { UsuarioService } from 'src/app/core/services/usuario.service';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-respostas',
@@ -17,30 +17,22 @@ export class RespostasComponent implements OnInit, OnDestroy {
   pergunta: Pergunta = new Pergunta();
   private subscriptions: Subscription[] = [];
   formGroupResposta: FormGroup = new FormGroup({
-
+    name: new FormControl('', Validators.required),
+    email: new FormControl('', Validators.required),
+    user: new FormControl('', Validators.required),
   });
 
   constructor(private perguntaService: PerguntaService,
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.subscriptions.push(
-      this.activatedRoute.paramMap.subscribe(params => {
-        const id = params.get('idPergunta');
-        this.subscriptions.push(
-          this.perguntaService.buscarPorId(id).subscribe(
-            (response) => {
-              this.pergunta = response.body.data;
-            }, (error) => {
-              toast('Não foi possível carregar os dados da pergunta');
-            }
-          )
-        );
-      })
-    );
   }
 
   ngOnDestroy(): void {
     this.subscriptions.forEach(subscription => subscription.unsubscribe());
+  }
+
+  adicionarResposta(): void {
+
   }
 }

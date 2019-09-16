@@ -22,7 +22,7 @@
     <div class="row">
       <h5>Respostas</h5>
 
-      <form [formGroup]="formGroupResposta">
+      <form [formGroup]="formGroupResposta" (ngSubmit)="adicionarResposta()">
         <div class="row">
           <div class="input-field col s12">
             <i class="material-icons prefix">comment</i>
