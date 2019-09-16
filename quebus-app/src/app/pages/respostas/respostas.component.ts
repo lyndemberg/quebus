@@ -6,9 +6,9 @@ import { toast } from 'angular2-materialize';
 import { Subscription } from 'rxjs';
 import { UsuarioService } from 'src/app/core/services/usuario.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 import { Title } from '@angular/platform-browser';
 import { UsuarioStorageService } from 'src/app/core/services/usuario-storage.service';
-import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-respostas',
@@ -25,14 +25,29 @@ export class RespostasComponent implements OnInit, OnDestroy {
   });
 
   constructor(private perguntaService: PerguntaService,
-              private usuarioStorage: UsuarioStorageService,
-              private titleService: Title,
-              private router: Router,
               private toastr: ToastrService,
+              private titleService: Title,
+              private usuarioStorage: UsuarioStorageService,
+              private router: Router,
               private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.titleService.setTitle('QUEBUS - Respostas da pergunta');
+
+    this.subscriptions.push(
+      this.activatedRoute.paramMap.subscribe(params => {
+        const id = params.get('idPergunta');
+        this.subscriptions.push(
+          this.perguntaService.buscarPorId(id).subscribe(
+            (response) => {
+              this.pergunta = response.body.data;
+            }, (error) => {
+              toast('Não foi possível carregar os dados da pergunta');
+            }
+          )
+        );
+      })
+    );
 
     const userId = this.usuarioStorage.recuperarUsuarioLocal()._id;
     this.formGroupResposta.get('user').setValue(userId);
@@ -45,13 +60,12 @@ export class RespostasComponent implements OnInit, OnDestroy {
   adicionarResposta(): void {
     this.subscriptions.push(
       this.perguntaService.addResposta(this.pergunta._id, this.formGroupResposta.value)
-        .subscribe(
-          (response) => {
-            this.toastr.success('', 'Resposta salva com sucesso!');
-          }, (error) => {
-            this.toastr.error('', 'Não foi possível salvar a resposta!');
-          }
-        )
-    )
+        .subscribe(response => {
+          this.toastr.success('', 'Resposta salva com sucesso!');
+          this.router.navigate(['/paginainicial']);
+        }, error => {
+          this.toastr.error('', 'Não foi possível salvar a resposta!');
+        })
+    );
   }
 }
